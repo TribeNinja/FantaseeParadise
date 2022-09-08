@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../Assets/paradise_white.png";
 import "./components.scss";
 import { LanguageList, T } from "react-translator-component";
 const Navbar = () => {
+  useEffect(() => {
+    <LanguageList />;
+  });
   return (
     <div className="navbarContainer">
       <div className="logoContainer">
