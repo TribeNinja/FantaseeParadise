@@ -1,5 +1,4 @@
 import "./App.scss";
-import { useState } from "react";
 import Navbar from "./Components/Navbar";
 import { Translator, T, Config } from "react-translator-component";
 import Topbar from "./Components/Topbar";
