@@ -1,6 +1,33 @@
 .MainContainer {
-  height: 100%;
   width: 100vw;
   overflow: hidden;
-  background-color: #141414;
+  color: aliceblue;
+  .section1 {
+    height: 85vh;
+    width: 100vw;
+    background-size: 100vw 85vh;
+    background-repeat: no-repeat;
+    background-color: #ff00ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      margin: 0;
+    }
+  }
+  .section2 {
+    height: 100vh;
+
+    background-color: #452545;
+  }
+  .section3 {
+    height: 100vh;
+
+    background-color: #201220;
+  }
+  .section4 {
+    height: 100vh;
+
+    background-color: #130a13;
+  }
 }

@@ -1,11 +1,44 @@
 .navbarContainer {
-  height: 15vh;
-  width: 100%;
-  position: fixed;
+  height: 10vh;
+  // position: fixed;
   background-color: #141414;
   padding: 0 5%;
   display: flex;
-  img {
+  align-items: center;
+  justify-content: space-between;
+  // overflow: hidden;
+  box-shadow: 2px 2px solid black;
+  color: #fafafa;
+  .logoContainer {
     height: 100%;
+    width: 30vw;
+    img {
+      height: 100%;
+    }
   }
+  .language {
+    background-color: #ffff00;
+  }
+  .menu {
+    width: 40vw;
+    // background-color: #ffff00;
+    display: flex;
+    justify-content: flex-end;
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+      width: 25vw;
+    }
+  }
+}
+.topbarContainer {
+  background-color: #282828;
+  color: #fafafa;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 5%;
 }
