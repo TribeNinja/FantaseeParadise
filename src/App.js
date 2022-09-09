@@ -1,6 +1,7 @@
 import "./App.scss";
 import Navbar from "./Components/Navbar";
 import { Translator, T, Config } from "react-translator-component";
+
 import Topbar from "./Components/Topbar";
 
 Config.default = "en";
@@ -25,7 +26,6 @@ function TranslatorApp() {
     </Translator>
   );
 }
-
 function App() {
   return (
     <>
