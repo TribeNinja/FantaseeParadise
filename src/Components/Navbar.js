@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import logo from "../Assets/paradise_white.png";
 import "./components.scss";
-import { LanguageList, T, Config } from "react-translator-component";
+import { T } from "react-translator-component";
 
 const Navbar = () => {
-  const [lang, setLang] = useState(Config);
   return (
     <div className="navbarContainer">
       <div className="logoContainer">
@@ -17,7 +16,7 @@ const Navbar = () => {
           <li>{T("Shop")}</li>
         </ul>
       </div>
-      <div className="language">
+      {/* <div className="language">
         <LanguageList Language={lang} />
         <select value={lang} onChange={(e) => setLang(e.target.value)}>
           {Object.keys(Config.list).map((key) => (
@@ -26,7 +25,7 @@ const Navbar = () => {
             </option>
           ))}
         </select>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -18,9 +18,7 @@
       height: 100%;
     }
   }
-  .language {
-    background-color: #ffff00;
-  }
+
   .menu {
     width: 40vw;
     // background-color: #ffff00;
@@ -46,4 +44,11 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 5%;
+  .language {
+    // background-color: #ffff00;
+    display: flex;
+    padding-left: 2%;
+    // justify-content: center;
+    // width: 10vw;
+  }
 }
