@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
 import logo from "../Assets/paradise_white.png";
+import { useState } from "react";
 import "./components.scss";
 import { T } from "react-translator-component";
 
 const Navbar = () => {
+  const [drawer, setDrawer] = useState(false);
   return (
     <div className="navbarContainer">
       <div className="logoContainer">
@@ -16,16 +17,33 @@ const Navbar = () => {
           <li>{T("Shop")}</li>
         </ul>
       </div>
-      {/* <div className="language">
-        <LanguageList Language={lang} />
-        <select value={lang} onChange={(e) => setLang(e.target.value)}>
-          {Object.keys(Config.list).map((key) => (
-            <option key={key} value={key}>
-              {Config.list[key].text}
-            </option>
-          ))}
-        </select>
-      </div> */}
+      {drawer ? (
+        <div className="sideBarContainer">
+          <ul>
+            <div
+              className="sideBarCloseButton"
+              onClick={() => {
+                setDrawer(!drawer);
+              }}
+            ></div>
+            <li>{T("Apply Here")}</li>
+            <li>{T("Management")}</li>
+            <li>{T("Shop")}</li>
+            <li>{T("Contact")}</li>
+          </ul>
+        </div>
+      ) : (
+        <div
+          className="sideBarContainer"
+          onClick={() => {
+            setDrawer(!drawer);
+          }}
+        >
+          <div className="hBurger"></div>
+          <div className="hBurger"></div>
+          <div className="hBurger"></div>
+        </div>
+      )}
     </div>
   );
 };
