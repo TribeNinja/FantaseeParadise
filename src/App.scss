@@ -2,42 +2,81 @@
   width: 100vw;
   overflow: hidden;
   color: #ffffff;
+  background-color: #6a366a;
   font-family: "Raleway";
+  overflow: scroll;
   .section1 {
     height: 100vh;
     width: 100vw;
     background-size: 100vw 100vh;
+    scroll-snap-type: y mandatory;
+    // opacity: 0.9;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    // @media screen and (max-width: 900px) {
-    //   background-size: 300vw 100vh;
-    // }
+    @media screen and (max-width: 900px) {
+      background-size: 300vw 100vh;
+      background-position-x: -40vh;
+    }
+    p {
+      font-size: 1em;
+      letter-spacing: 8px;
+      font-weight: 400;
+      @media screen and (max-width: 900px) {
+        font-size: 1.2em;
+        text-align: center;
+        letter-spacing: 5px;
+        padding: 0 80px;
+        font-weight: 400;
+      }
+    }
   }
   .section2 {
     height: 100vh;
     display: flex;
     align-items: center;
+    scroll-snap-type: y mandatory;
     background-position: 100% 0;
     background-repeat: no-repeat;
     background-size: 60%;
     background-color: #fff;
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      background-size: 110vh;
+      justify-content: center;
+    }
     .textContainer {
       height: 40%;
       width: 40%;
       display: flex;
       flex-direction: column;
+      line-height: 4vh;
       margin-left: 5%;
+      @media screen and (max-width: 900px) {
+        line-height: 2.3vh;
+        width: 100%;
+        height: 70%;
+        justify-content: center;
+        margin: 0;
+        background-color: #242424b1;
+      }
       .title {
         display: flex;
+        @media screen and (max-width: 900px) {
+          padding: 0 50px;
+        }
         h2 {
           font-size: 2em;
           margin: 0;
           font-weight: 600;
           color: #82560c;
+          @media screen and (max-width: 900px) {
+            color: #82560c;
+          }
         }
         .line {
+          height: 50%;
           margin-left: 5%;
           height: 100%;
           border-radius: 20px;
@@ -48,19 +87,86 @@
       p {
         color: #82560c;
         text-align: justify;
+        @media screen and (max-width: 900px) {
+          padding: 0 50px;
+          color: #fff;
+        }
       }
     }
   }
   .section3 {
-    height: 100vh;
+    height: 90vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    background-position: 100% 0;
+    padding: 0% 5%;
+    background-size: auto;
+    background-position-x: center;
     background-repeat: no-repeat;
-    background-size: 60%;
-    background-color: #000;
+    background-color: #82560c;
+    overflow: hidden;
+    @media screen and (max-width: 900px) {
+      height: 90vh;
+      background-size: cover !important;
+      overflow: hidden;
+    }
+
+    p {
+      font-size: 2em;
+      @media screen and (max-width: 900px) {
+        font-size: 1.5em;
+      }
+    }
+    .section3Wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .section3Button {
+        height: 5vh;
+        width: 20%;
+        background-color: #82560c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-weight: 700;
+        transition: 0.2s linear all;
+        cursor: pointer;
+        @media screen and (max-width: 900px) {
+          width: 80%;
+        }
+      }
+      .section3Button:hover {
+        background-color: #fff;
+        color: #82560c;
+      }
+      p {
+        font-size: 1em;
+        text-align: justify;
+        width: 46%;
+        text-align-last: center;
+        @media screen and (max-width: 900px) {
+          width: 80vw;
+          padding: 5%;
+        }
+      }
+      .section3Left {
+        background-color: #82560c;
+        width: 66%;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      background-position: -75vw 0vh;
+      background-size: 280%;
+    }
   }
   .section4 {
+    height: 100vh;
+
+    background-color: #6a366a;
+  }
+  .section5 {
     height: 100vh;
 
     background-color: #130a13;

@@ -15,6 +15,7 @@ const Navbar = () => {
           <li>{T("Apply Here")}</li>
           <li>{T("Management")}</li>
           <li>{T("Shop")}</li>
+          <li>Fantasee Party</li>
         </ul>
       </div>
       {drawer ? (
@@ -29,6 +30,7 @@ const Navbar = () => {
             <li>{T("Apply Here")}</li>
             <li>{T("Management")}</li>
             <li>{T("Shop")}</li>
+            <li>Fantasee Party</li>
             <li>{T("Contact")}</li>
           </ul>
         </div>
