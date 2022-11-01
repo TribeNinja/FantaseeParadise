@@ -8,10 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Raleway";
+  font-family: "Montserrat", sans-serif;
   // overflow: hidden;
   box-shadow: 2px 2px solid black;
-  color: #82560c;
+  color: #979797;
+  // font-weight: 900;
   z-index: 22;
   @media screen and (max-width: 900px) {
     margin-top: 0;
@@ -41,8 +42,8 @@
   }
 }
 .topbarContainer {
-  background-color: #161820;
-  font-family: "Raleway";
+  background-color: #000;
+  // font-family: "Raleway";
   z-index: 22;
   color: #82560c;
   height: 5vh;
@@ -252,7 +253,19 @@ body {
 }
 
 .testimonyContainer {
-  height: 100%;
-  width: 90vw;
-  background-color: #8c6700;
+  height: 80%;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 100px black;
+  overflow: hidden;
+  background-color: #000000ce;
+  .swiper {
+    height: 100%;
+    width: 100%;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

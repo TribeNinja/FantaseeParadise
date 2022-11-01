@@ -3,7 +3,6 @@ import Navbar from "./Components/Navbar";
 import { Translator, T, Config } from "react-translator-component";
 import Topbar from "./Components/Topbar";
 import Collage from "./Components/Collage";
-import TestimonialCard from "material-testimonial-card";
 import Testimonial from "./Components/Testimonial";
 
 Config.default = "en";
@@ -88,41 +87,47 @@ function App() {
             })`,
           }}
         >
-          <p>Total Model Management</p>
+          <p>{T("Total Model Management")}</p>
           <div className="section3Wrapper">
             <p>
-              Are you a model who needs management. Whether you work remotely or
-              would like to work at one of our studios, we provide a complete
-              setup, photoshoots, education, and promotions. We manage OnlyFans,
-              Webcams, Influencers, and Reality Stars.
+              {T(
+                "Are you a model who needs management. Whether you work remotely or would like to work at one of our studios, we provide a complete setup, photoshoots, education, and promotions. We manage OnlyFans, Webcams, Influencers, and Reality Stars."
+              )}
             </p>
-            <p className="section3Button">Join us to live your FantaSee life</p>
+            <p className="section3Button">
+              {T("Join us to live your FantaSee life")}
+            </p>
 
             <div className="">
               <Collage />
             </div>
           </div>
         </section>
-        <section className="section4">
-          {/* <TestimonialCard
-            name={"John Smith"}
-            image={"/path/to/image.jpg"}
-            content={
-              "Wow! This testimonial card is so amazing! I would like to use it in my project!"
-            }
-            project={"Testimonial card"}
-          />
-          <TestimonialCard
-            name={"John Smith"}
-            image={"/path/to/image.jpg"}
-            content={
-              "Wow! This testimonial card is so amazing! I would like to use it in my project!"
-            }
-            project={"Testimonial card"}
-          /> */}
+        <section
+          className="section4"
+          style={{
+            backgroundImage: `url(${
+              process.env.PUBLIC_URL + "/Assets/section4.jpg"
+            })`,
+          }}
+        >
           <Testimonial />
         </section>
-        <section className="section5"></section>
+        <section
+          className="section5"
+          style={{
+            backgroundImage: `url(${
+              process.env.PUBLIC_URL + "/Assets/fparty.png"
+            })`,
+          }}
+        >
+          <div class="comingSoon">
+            <b>
+              <span>Where</span>-FantaSee-<span>becomes</span>-reality
+            </b>
+            <p>Coming Soon</p>
+          </div>
+        </section>
       </div>
     </>
   );
