@@ -7,13 +7,13 @@ const Navbar = () => {
   const [drawer, setDrawer] = useState(false);
   return (
     <div className="navbarContainer">
-      <div className="logoContainer">
-        <img src={logo} alt={""} />
-      </div>
       <div className="menu">
         <ul>
           <li>{T("Apply Here")}</li>
           <li>{T("Management")}</li>
+          <li>
+            <img src={logo} alt={""} />
+          </li>
           <li>{T("Shop")}</li>
           <li>Fantasee Party</li>
         </ul>

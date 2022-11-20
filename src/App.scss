@@ -1,31 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
 .MainContainer {
   width: 100vw;
   overflow: hidden;
   color: #ffffff;
-  background-color: #6a366a;
-  font-family: "Roboto", Sans-Serif;
-  overflow: scroll;
+  background-color: #fff;
+  background-position: 40% 0;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: 120%;
   .section1 {
     height: 100vh;
     width: 100vw;
-    background-size: 100vw 100vh;
-    scroll-snap-type: y mandatory;
-    // opacity: 0.9;
     display: flex;
     justify-content: center;
     align-items: center;
+    // padding: 0 5%;
+    font-weight: 700;
     font-size: 1.5rem;
     @media screen and (max-width: 900px) {
       background-size: 300vw 100vh;
       background-position-x: -40vh;
     }
     p {
-      font-size: 1em;
-      letter-spacing: 8px;
-      font-weight: 400;
+      width: 40%;
+      height: 10%;
+      font-size: 1.5em;
+      text-align: center;
+      // background-color: #cd9706;
+      color: #cd9706;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 100;
+      border-radius: 10px;
+      font-family: "Dancing Script", cursive;
+      font-weight: 700;
       @media screen and (max-width: 900px) {
         font-size: 1.2em;
-        text-align: center;
+        text-align: left;
         letter-spacing: 5px;
         padding: 0 80px;
         font-weight: 400;
@@ -36,23 +48,18 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    scroll-snap-type: y mandatory;
-    background-position: 100% 0;
-    background-repeat: no-repeat;
-    background-size: 60%;
-    background-color: #fff;
+    padding: 0 5%;
     @media screen and (max-width: 900px) {
       flex-direction: column;
       background-size: 110vh;
       justify-content: center;
     }
     .textContainer {
-      height: 40%;
-      width: 40%;
+      // height: 40%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       line-height: 4vh;
-      margin-left: 5%;
       @media screen and (max-width: 900px) {
         line-height: 2.3vh;
         width: 100%;
@@ -70,9 +77,9 @@
           font-size: 2em;
           margin: 0;
           font-weight: 600;
-          color: #82560c;
+          color: #cd9706;
           @media screen and (max-width: 900px) {
-            color: #82560c;
+            color: #cd9706;
           }
         }
         .line {
@@ -85,8 +92,11 @@
         }
       }
       p {
-        color: #82560c;
+        color: #000;
         text-align: justify;
+        background-color: #dbdbdbb4;
+        border-radius: 10px;
+        padding: 5%;
         @media screen and (max-width: 900px) {
           padding: 0 50px;
           color: #fff;
@@ -95,11 +105,10 @@
     }
   }
   .section3 {
-    height: 100vh;
+    height: 86vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 0% 5%;
     background-size: auto;
     background-position-x: center;
     background-repeat: no-repeat;
@@ -118,14 +127,21 @@
       }
     }
     .section3Wrapper {
-      width: 100%;
+      width: 90%;
+      height: 100%;
       display: flex;
+      padding: 0 5%;
       align-items: center;
-      flex-direction: column;
+
+      .writing {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
       .section3Button {
         height: 5vh;
         // width: 30%;
-        background-color: #82560c;
+        background-color: #cd9706;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -139,13 +155,12 @@
       }
       .section3Button:hover {
         background-color: #fff;
-        color: #82560c;
+        color: #cd9706;
       }
       p {
         font-size: 1em;
-        text-align: justify;
-        width: 46%;
-        text-align-last: center;
+        // text-align: justify;
+        // text-align-last: center;
         @media screen and (max-width: 900px) {
           width: 80vw;
           padding: 5%;
@@ -162,7 +177,7 @@
     }
   }
   .section4 {
-    height: 85vh;
+    height: 86vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,7 +187,7 @@
     background-repeat: no-repeat;
   }
   .section5 {
-    height: 85vh;
+    height: 86vh;
     background-size: 100% 100%;
     background-position-x: center;
     background-position-y: center;

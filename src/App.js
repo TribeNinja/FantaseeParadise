@@ -46,26 +46,25 @@ function App() {
     <>
       <Topbar />
       <Navbar />
-      <div className="MainContainer">
-        <section
-          id="f"
-          className="section1"
-          style={{
-            backgroundImage: `url(${
-              process.env.PUBLIC_URL + "/Assets/section1.jpg"
-            })`,
-          }}
-        >
+      <div
+        className="MainContainer"
+        style={{
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/Assets/section2.jpg"
+          })`,
+        }}
+      >
+        <section id="f" className="section1">
           <p>{T("See your FantaSees come to life")}</p>
         </section>
         <section
           id="s"
           className="section2"
-          style={{
-            backgroundImage: `url(${
-              process.env.PUBLIC_URL + "/Assets/section2.jpg"
-            })`,
-          }}
+          // style={{
+          //   backgroundImage: `url(${
+          //     process.env.PUBLIC_URL + "/Assets/section2.jpg"
+          //   })`,
+          // }}
         >
           <div className="textContainer">
             <div className="title">
@@ -87,20 +86,22 @@ function App() {
             })`,
           }}
         >
-          <p>{T("Total Model Management")}</p>
           <div className="section3Wrapper">
-            <p>
-              {T(
-                "Are you a model who needs management. Whether you work remotely or would like to work at one of our studios, we provide a complete setup, photoshoots, education, and promotions. We manage OnlyFans, Webcams, Influencers, and Reality Stars."
-              )}
-            </p>
-            <p className="section3Button">
-              {T("Join us to live your FantaSee life")}
-            </p>
-
-            <div className="">
-              <Collage />
+            <div className="writing">
+              <h1>{T("Total Model Management")}</h1>
+              <p>
+                {T(
+                  "Are you a model who needs management. Whether you work remotely or would like to work at one of our studios, we provide a complete setup, photoshoots, education, and promotions. We manage OnlyFans, Webcams, Influencers, and Reality Stars."
+                )}
+              </p>
+              <p className="section3Button">
+                {T("Join us to live your FantaSee life")}
+              </p>
             </div>
+          </div>
+          <div className="">
+            {" "}
+            <Collage />{" "}
           </div>
         </section>
         <section
