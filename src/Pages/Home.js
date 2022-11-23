@@ -5,6 +5,7 @@ import Topbar from "../Components/Topbar";
 import Collage from "../Components/Collage";
 import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
+import { useEffect } from "react";
 
 Config.default = "en";
 
@@ -24,12 +25,29 @@ Config.list = {
 function TranslatorApp() {
   return (
     <Translator>
-      <App />
+      <Home />
     </Translator>
   );
 }
 
-function App() {
+function Home() {
+  useEffect(() => {
+    var imageControl = function (event) {
+      var fromTop = window.scrollTop(),
+        url = null;
+      console.log(fromTop);
+
+      if (fromTop < 100) {
+        url = "http://i.hizliresim.com/KdrGVV.png";
+      } else if (fromTop > 500) {
+        url =
+          "http://4.bp.blogspot.com/-mHaVHhUegKs/UjHp6DruPeI/AAAAAAAAGx8/m_je_crr1v0/s1600/wp+cortana+screenshot+mashup.jpg";
+      }
+
+      "body".css("background-image", "url(" + url + ")");
+    };
+    window.scroll(imageControl);
+  });
   return (
     <>
       <div className="MainContainer">

@@ -80,7 +80,7 @@
 .sideBarContainer {
   display: none;
   z-index: 22;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1224px) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -144,20 +144,6 @@
   }
 }
 
-.footerContainer {
-  height: 10vh;
-  width: 100vw;
-  background-color: #cd9706;
-  display: flex;
-  .copyright {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #0f0f0f;
-  }
-}
 body {
   background-color: black;
 }
@@ -169,11 +155,17 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  @media screen and (max-width: 1224px) {
+    top: -45vh;
+    width: 100vw;
+  }
   .collage {
     width: 80vw;
     position: relative;
     @media screen and (max-width: 900px) {
       margin: 5% 10%;
+      width: 100%;
+      background-color: #cd9706;
     }
     div {
       @media screen and (max-width: 900px) {
@@ -247,6 +239,43 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
+
+.footerContainer {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  @media screen and (max-width: 1224px) {
+    flex-direction: column;
+    height: 90vh;
+  }
+
+  .items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f0f0f;
+    @media screen and (max-width: 1224px) {
+    }
+    .social {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 40%;
+      @media screen and (max-width: 1224px) {
+        width: 100%;
+      }
+      p {
+        margin: 0;
+        @media screen and (max-width: 1224px) {
+          font-size: 1.5em;
+        }
+      }
     }
   }
 }
