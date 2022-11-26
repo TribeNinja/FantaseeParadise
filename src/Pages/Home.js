@@ -1,11 +1,12 @@
-import "../App.scss";
+import "./Pages.scss";
 import Navbar from "../Components/Navbar";
 import { Translator, T, Config } from "react-translator-component";
 import Topbar from "../Components/Topbar";
-import Collage from "../Components/Collage";
 import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Forms from "../Components/Forms";
+import Collage from "../Components/Collage";
 
 Config.default = "en";
 
@@ -31,6 +32,7 @@ function TranslatorApp() {
 }
 
 function Home() {
+  const [modelManage, setModelManage] = useState(false);
   useEffect(() => {
     var imageControl = function (event) {
       var fromTop = window.scrollTop(),
@@ -95,15 +97,17 @@ function Home() {
                   "Are you a model who needs management. Whether you work remotely or would like to work at one of our studios, we provide a complete setup, photoshoots, education, and promotions. We manage OnlyFans, Webcams, Influencers, and Reality Stars."
                 )}
               </p>
-              <p className="section3Button">
+              <p
+                className="section3Button"
+                onClick={() => {
+                  setModelManage(!modelManage);
+                }}
+              >
                 {T("Join us to live your FantaSee life")}
               </p>
             </div>
           </div>
-          <div className="">
-            {" "}
-            <Collage />{" "}
-          </div>
+          {modelManage ? <Forms /> : <Collage clicked={modelManage} />}
         </section>
         {/* Section 4 */}
         <section
