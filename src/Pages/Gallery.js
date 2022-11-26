@@ -34,7 +34,8 @@ const Gallery = () => {
             })`,
           }}
         ></div>
-        <h1>The Gallery</h1>
+        <h1 className="the">The</h1>
+        <h1> Gallery</h1>
       </div>
       <div className="bottomSection">
         {imageArray.map((item, index) => {
