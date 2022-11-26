@@ -110,7 +110,7 @@ function Home() {
           {modelManage ? <Forms /> : <Collage clicked={modelManage} />}
         </section>
         {/* Section 4 */}
-        <section
+        {/* <section
           className="section4"
           style={{
             backgroundImage: `url(${
@@ -119,7 +119,7 @@ function Home() {
           }}
         >
           <Testimonial />
-        </section>
+        </section> */}
         {/* Section 5 */}
         <section
           className="section5"
