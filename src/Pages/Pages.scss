@@ -154,13 +154,14 @@
     .section3Button {
       height: 5vh;
       // width: 30%;
-      background-color: #cd9706;
+      border: 2px solid #cd9706;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 10px;
       font-weight: 700;
       transition: scale 0.3s;
+      color: #c5c5c5;
       cursor: pointer;
       @media screen and (max-width: 1224px) {
         width: 100%;
@@ -356,34 +357,181 @@
     }
   }
   .bottomSection {
-    // height: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    // column-gap: 2.5%;
-    // row-gap: 1%;
-    padding: 5%;
-    background-color: #0d0d0d;
-
-    @media screen and (max-width: 1224px) {
-      grid-template-columns: auto auto;
-      column-gap: 0.1%;
-    }
-    div {
-      height: 40vh;
-      transition: scale 0.3s;
-      overflow: hidden;
+    display: flex;
+    height: 78vh;
+    width: 100vw;
+    .bottomLeft {
+      width: 18vw;
+      padding: 2.5%;
+      overflow-y: scroll;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-
-      cursor: pointer;
-      img {
-        // background-size: contain;
+      .imageItem {
         width: 100%;
+        background-color: #0d0d0d;
+        display: flex;
+        margin-top: 10px;
+        justify-content: space-between;
+        align-items: center;
+        transition: scale 0.3s;
+        cursor: pointer;
+        .imageWrapper {
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+        img {
+          height: 20vh;
+          filter: grayscale(1);
+          // https://www.dropbox.com/s/18qeub65epojz2g/7.jpg?dl=0
+        }
+      }
+      .imageItem:hover {
+        scale: 0.95;
       }
     }
-    div:hover {
-      scale: 1.1;
+    .bottomRight {
+      width: 82vw;
+      // background-color: orange;
+      border: 2px solid #cd9706;
+      display: flex;
+      overflow-x: scroll;
+      scrollbar-color: red yellow;
+
+      img {
+        width: 20vw;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background-color: #c5c5c5;
+        height: 100%;
+        padding: 0 2.5%;
+        scrollbar-color: dark;
+      }
+      div:first-child {
+        padding-left: 20%;
+      }
+    }
+  }
+}
+
+// FORM ITEM CONTAINER
+.FormContainer {
+  height: 100vh;
+  padding-top: 20vh;
+  padding-bottom: 5vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .FormTitle {
+    // width: 80vw;
+    padding: 0 10vh;
+    background-color: #000;
+    color: #c5c5c5;
+  }
+  .formContents {
+    height: 100%;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    form {
+      width: 80%;
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 5%;
+      label {
+        width: 100%;
+      }
+      .sex {
+        display: flex;
+        .radioContainer {
+          width: 50%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+      }
+      input {
+        height: 5vh;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #cd9706;
+        background-color: transparent;
+        color: #c5c5c5;
+        text-indent: 10px;
+      }
+
+      input[type="submit"] {
+        margin-top: 10%;
+        background-color: #cd9706;
+        color: #1d1d1d;
+      }
+      .subInput {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 5%;
+        // background-color: #2d2d2d;
+        input {
+          display: flex;
+          // width: 20vw;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.FormContainer2 {
+  height: 65vh;
+  padding-top: 25vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  .FormTitle {
+    // width: 80vw;
+    padding: 0 20vh;
+    background-color: #000;
+    color: #c5c5c5;
+  }
+  .formContents {
+    height: 100%;
+    width: 90vw;
+    display: flex;
+    padding-bottom: 10vh;
+    justify-content: center;
+    form {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      column-gap: 5%;
+      label {
+        width: 100%;
+      }
+
+      input {
+        height: 5vh;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #cd9706;
+        background-color: transparent;
+        color: #c5c5c5;
+        text-indent: 10px;
+      }
+
+      input[type="submit"] {
+        margin-top: 2%;
+        background-color: #cd9706;
+        color: #1d1d1d;
+      }
     }
   }
 }

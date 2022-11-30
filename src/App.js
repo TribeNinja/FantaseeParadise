@@ -5,6 +5,8 @@ import Topbar from "./Components/Topbar";
 import Navbar from "./Components/Navbar";
 import Gallery from "./Pages/Gallery";
 import "./App.scss";
+import Application from "./Pages/Application";
+import Release from "./Pages/Release";
 const App = () => {
   return (
     <>
@@ -14,6 +16,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/apply-now" element={<Application />} />
+          <Route path="/release-form" element={<Release />} />
         </Routes>
       </div>
     </>

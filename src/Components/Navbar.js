@@ -10,7 +10,9 @@ const Navbar = () => {
     <div className="navbarContainer">
       <div className="menu">
         <ul>
-          <li>{T("Apply Here")}</li>
+          <a href="/apply-now" target="_blank">
+            <li>{T("Apply Here")}</li>
+          </a>
           <Link to="/gallery">
             <li>{T("Gallery")}</li>
           </Link>

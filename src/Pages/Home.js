@@ -49,7 +49,7 @@ function Home() {
       "body".css("background-image", "url(" + url + ")");
     };
     window.scroll(imageControl);
-  });
+  }, [modelManage]);
   return (
     <>
       <div className="MainContainer">
@@ -103,7 +103,9 @@ function Home() {
                   setModelManage(!modelManage);
                 }}
               >
-                {T("Join us to live your FantaSee life")}
+                {modelManage
+                  ? T("Choose a relevant form to your right or click again.")
+                  : T("Join us to live your FantaSee life")}
               </p>
             </div>
           </div>
