@@ -41,9 +41,16 @@ const Navbar = () => {
                 setDrawer(!drawer);
               }}
             ></div>
-            <li>{T("Apply Here")}</li>
-            <li>{T("Gallery")}</li>
-            <li>{T("Shop")}</li>
+            <Link to="/">
+              <li>{T("Home")}</li>
+            </Link>
+            <a href="/apply-now" target="_blank">
+              <li>{T("Apply Here")}</li>
+            </a>
+            <Link to="/gallery">
+              <li>{T("Gallery")}</li>
+            </Link>
+
             <li>Fantasee Party</li>
             <li>{T("Contact")}</li>
           </ul>

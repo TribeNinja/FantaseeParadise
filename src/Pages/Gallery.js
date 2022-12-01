@@ -5,8 +5,8 @@ import Footer from "../Components/Footer";
 const Gallery = () => {
   const [jToggler, setJToggler] = useState(false);
   const [lToggler, setLToggler] = useState(false);
-  const [sToggler, setSToggler] = useState(false);
-  const [sxToggler, setSXToggler] = useState(false);
+  const [sbToggler, setSbToggler] = useState(false);
+  const [sxToggler, setSxToggler] = useState(false);
   const [lightbox, setLightbox] = useState(0);
 
   const [profile, setProfile] = useState(0);
@@ -51,7 +51,6 @@ const Gallery = () => {
   ];
   const Sexboy = [
     "https://dl.dropboxusercontent.com/s/tfm0vvup1mnrt7t/o_O.png",
-    "https://dl.dropboxusercontent.com/s/qemcuneyhzcku9t/o_O.png",
     "https://dl.dropboxusercontent.com/s/qemcuneyhzcku9t/o_O.png",
   ];
 
@@ -137,15 +136,14 @@ const Gallery = () => {
                       alt={item}
                       src={item}
                       onClick={() => {
-                        setSXToggler(!sxToggler);
+                        setSxToggler(!sxToggler);
                         setLightbox(index);
                       }}
                     />
                   </div>
                 );
               })
-            : profile === 3
-            ? Sexboy.map((item, index) => {
+            : Sexboy.map((item, index) => {
                 return (
                   <div key={index}>
                     <img
@@ -153,32 +151,39 @@ const Gallery = () => {
                       alt={item}
                       src={item}
                       onClick={() => {
-                        setSToggler(!sToggler);
+                        setSbToggler(!sbToggler);
                         setLightbox(index);
                       }}
                     />
                   </div>
                 );
-              })
-            : ""}
+              })}
         </div>
-        <FsLightbox
-          toggler={jToggler}
-          sources={Jasmine}
-          sourceIndex={lightbox}
-        />
-        <FsLightbox toggler={lToggler} sources={Lulu} sourceIndex={lightbox} />
-        <FsLightbox
-          toggler={sxToggler}
-          sources={SoulX}
-          sourceIndex={lightbox}
-        />
-        <FsLightbox
-          toggler={sToggler}
-          sources={Sexboy}
-          sourceIndex={lightbox}
-        />
       </div>
+      <FsLightbox
+        toggler={jToggler}
+        sources={Jasmine}
+        sourceIndex={lightbox}
+        types={[...new Array(Jasmine.length).fill("image")]}
+      />
+      <FsLightbox
+        toggler={lToggler}
+        sources={Lulu}
+        sourceIndex={lightbox}
+        types={[...new Array(Lulu.length).fill("image")]}
+      />
+      <FsLightbox
+        toggler={sxToggler}
+        sources={SoulX}
+        sourceIndex={lightbox}
+        types={[...new Array(SoulX.length).fill("image")]}
+      />
+      <FsLightbox
+        toggler={sbToggler}
+        sources={Sexboy}
+        sourceIndex={lightbox}
+        types={[...new Array(Sexboy.length).fill("image")]}
+      />
       <Footer />
     </div>
   );
