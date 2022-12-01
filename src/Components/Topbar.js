@@ -6,7 +6,7 @@ const Topbar = () => {
   const [lang, setLang] = useState(Config);
   return (
     <div className="topbarContainer">
-      <p>{T("Contact")}</p>
+      <p>Contact</p>
       <div className="language">
         <LanguageList Language={lang} />
         <select value={lang} onChange={(e) => setLang(e.target.value)}>

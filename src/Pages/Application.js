@@ -2,13 +2,21 @@ import { observer } from "mobx-react-lite";
 import React from "react";
 import Footer from "../Components/Footer";
 import "./Pages.scss";
+import { Translator, T, Config } from "react-translator-component";
+function TranslatorApplication() {
+  return (
+    <Translator>
+      <Application />
+    </Translator>
+  );
+}
 
 const Application = () => {
   return (
     <>
       <div className="FormContainer">
         <div className="FormTitle">
-          <h1>Application Form</h1>
+          <h1>{T("Application Form")}</h1>
         </div>
         <div className="formContents">
           <form>
@@ -81,4 +89,4 @@ const Application = () => {
   );
 };
 
-export default observer(Application);
+export default observer(TranslatorApplication);

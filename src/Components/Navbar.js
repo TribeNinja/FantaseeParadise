@@ -1,9 +1,15 @@
 import logo from "../Assets/paradise_white.png";
 import { useState } from "react";
 import "./components.scss";
-import { T } from "react-translator-component";
+import { T, Translator } from "react-translator-component";
 import { Link } from "react-router-dom";
-
+function TranslatorNavbar() {
+  return (
+    <Translator>
+      <Navbar />
+    </Translator>
+  );
+}
 const Navbar = () => {
   const [drawer, setDrawer] = useState(false);
   return (
@@ -58,4 +64,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default TranslatorNavbar;

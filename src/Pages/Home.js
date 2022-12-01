@@ -1,8 +1,8 @@
 import "./Pages.scss";
-import Navbar from "../Components/Navbar";
+// import Navbar from "../Components/Navbar";
 import { Translator, T, Config } from "react-translator-component";
-import Topbar from "../Components/Topbar";
-import Testimonial from "../Components/Testimonial";
+// import Topbar from "../Components/Topbar";
+// import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
 import { useEffect, useState } from "react";
 import Forms from "../Components/Forms";
