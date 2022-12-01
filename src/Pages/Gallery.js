@@ -7,7 +7,7 @@ const Gallery = () => {
   const [lToggler, setLToggler] = useState(false);
   const [sToggler, setSToggler] = useState(false);
   const [sxToggler, setSXToggler] = useState(false);
-  const [lightbox, setLightbox] = useState();
+  const [lightbox, setLightbox] = useState(0);
 
   const [profile, setProfile] = useState(0);
 
@@ -101,7 +101,7 @@ const Gallery = () => {
                 return (
                   <div key={index}>
                     <img
-                      loading="lazy"
+                      // loading="lazy"
                       alt={item}
                       src={item}
                       onClick={() => {
