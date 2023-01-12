@@ -1,8 +1,6 @@
 import "./Pages.scss";
-// import Navbar from "../Components/Navbar";
 import { Translator, T, Config } from "react-translator-component";
-// import Topbar from "../Components/Topbar";
-// import Testimonial from "../Components/Testimonial";
+
 import Footer from "../Components/Footer";
 import { useEffect, useState } from "react";
 import Forms from "../Components/Forms";
@@ -80,7 +78,6 @@ function Home() {
             </div>
           </section>
         </section>
-        {/* Section 3 */}
         <section
           className="section3"
           style={{
@@ -111,18 +108,6 @@ function Home() {
           </div>
           {modelManage ? <Forms /> : <Collage clicked={modelManage} />}
         </section>
-        {/* Section 4 */}
-        {/* <section
-          className="section4"
-          style={{
-            backgroundImage: `url(${
-              process.env.PUBLIC_URL + "/Assets/section4.jpg"
-            })`,
-          }}
-        >
-          <Testimonial />
-        </section> */}
-        {/* Section 5 */}
         <section
           className="section5"
           style={{
