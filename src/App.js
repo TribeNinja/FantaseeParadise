@@ -7,6 +7,7 @@ import Gallery from "./Pages/Gallery";
 import "./App.scss";
 import Application from "./Pages/Application";
 import Release from "./Pages/Release";
+
 const App = () => {
   return (
     <>

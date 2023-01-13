@@ -63,6 +63,7 @@ function Home() {
           <section className="section1">
             <p>{T("See your FantaSees come to life")}</p>
           </section>
+
           {/* Section 2 */}
           <section className="section2">
             <div className="textContainer">
@@ -76,8 +77,20 @@ function Home() {
                 )}
               </p>
             </div>
+            <video
+              className="video"
+              src={process.env.PUBLIC_URL + "/Assets/homeVideo.mp4"}
+              muted
+              autoPlay
+              loop
+            >
+              <audio
+                src={process.env.PUBLIC_URL + "/Assets/homeVideo.mp4"}
+              ></audio>
+            </video>
           </section>
         </section>
+        {/* Total Model Management */}
         <section
           className="section3"
           style={{

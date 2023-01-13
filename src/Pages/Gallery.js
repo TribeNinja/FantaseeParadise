@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import sanityClient from "../Components/Client";
 
-const ShowMore = () => {
+const ShowMore = (props) => {
   return (
     <>
       <div className="showDesc">
-        <h1>Name</h1>
+        <h1>{props.name}</h1>
       </div>
       <div className="showMore">
         <h1>Show More</h1>
@@ -14,7 +15,17 @@ const ShowMore = () => {
 };
 const Gallery = () => {
   const [showMore, setShowMore] = useState(0);
-  console.log(showMore);
+
+  // Sanity Connection
+  const [postData, setPostData] = useState(null);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == "models"]{name,image{asset->{_id,url}}}`)
+      .then((data) => setPostData(data))
+      .catch(console.error);
+  }, []);
+
   return (
     <div className="galleryContainer">
       <div className="topSection">
@@ -39,78 +50,23 @@ const Gallery = () => {
       </div>
       <div className="bottomSection">
         <div className="modelContainer">
-          <div
-            className="imgContainer"
-            onMouseOver={() => {
-              setShowMore(1);
-            }}
-            onMouseLeave={() => {
-              setShowMore(0);
-            }}
-          >
-            <img src={process.env.PUBLIC_URL + "/Assets/1.jpg"} />
-            {showMore === 1 && <ShowMore />}
-          </div>
-          <div
-            className="imgContainer"
-            onMouseOver={() => {
-              setShowMore(2);
-            }}
-            onMouseLeave={() => {
-              setShowMore(0);
-            }}
-          >
-            <img src={process.env.PUBLIC_URL + "/Assets/1.jpg"} />
-            {showMore === 2 && <ShowMore />}
-          </div>
-          <div
-            className="imgContainer"
-            onMouseOver={() => {
-              setShowMore(3);
-            }}
-            onMouseLeave={() => {
-              setShowMore(0);
-            }}
-          >
-            <img src={process.env.PUBLIC_URL + "/Assets/1.jpg"} />
-            {showMore === 3 && <ShowMore />}
-          </div>
-          <div
-            className="imgContainer"
-            onMouseOver={() => {
-              setShowMore(4);
-            }}
-            onMouseLeave={() => {
-              setShowMore(0);
-            }}
-          >
-            <img src={process.env.PUBLIC_URL + "/Assets/1.jpg"} />
-            {showMore === 4 && <ShowMore />}
-          </div>
-          <div
-            className="imgContainer"
-            onMouseOver={() => {
-              setShowMore(5);
-            }}
-            onMouseLeave={() => {
-              setShowMore(0);
-            }}
-          >
-            <img src={process.env.PUBLIC_URL + "/Assets/1.jpg"} />
-            {showMore === 5 && <ShowMore />}
-          </div>
-          <div
-            className="imgContainer"
-            onMouseOver={() => {
-              setShowMore(6);
-            }}
-            onMouseLeave={() => {
-              setShowMore(0);
-            }}
-          >
-            <img src={process.env.PUBLIC_URL + "/Assets/1.jpg"} />
-            {showMore === 6 && <ShowMore />}
-          </div>
+          {postData &&
+            postData.map((models, index) => (
+              <div
+                className="imgContainer"
+                onMouseOver={() => {
+                  setShowMore(index);
+                }}
+                onMouseLeave={() => {
+                  setShowMore(null);
+                }}
+              >
+                <>
+                  <img src={models.image.asset.url} />
+                  {showMore === index && <ShowMore name={models.name} />}
+                </>
+              </div>
+            ))}
         </div>
       </div>
     </div>
