@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@700&display=swap");
 .section0 {
   background-position-x: 40%;
   background-position-y: top;
   background-repeat: no-repeat;
   background-size: cover;
   overflow-y: scroll;
+
   @media screen and (max-width: 1224px) {
     background-position-x: 80%;
     background-size: 100%;
@@ -16,25 +18,31 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  // padding: 0 5%;
+  padding: 0 2.5%;
+  margin: 0;
   font-weight: 700;
   font-size: 1.5rem;
 
   p {
-    width: 40%;
-    height: 10%;
-    font-size: 1.5em;
+    width: 100%;
+    height: 60vh;
+    font-size: 3em;
+    font-weight: 700;
     text-align: center;
-    color: #cd9806;
-    background-color: #0d0d0db0;
+    background-image: linear-gradient(45deg, #221800, #cd9706, #221800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // -webkit-text-stroke: 1px #cd9806b4;
+    // background-color: #0d0d0db0;
+    padding-top: 10vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-weight: 100;
     border-radius: 10px;
-    font-family: "Alex Brush", cursive;
+    // font-family: "Alex Brush", cursive;
 
     // font: 400 10vh;
     @media screen and (max-width: 1224px) {
@@ -50,19 +58,28 @@
   }
 }
 .section2 {
-  height: 90vh;
+  // height: 100vh;
+  width: 95vw;
+  overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  padding: 5%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5%;
   @media screen and (max-width: 1224px) {
+    width: 100vw;
+    padding: 0;
     flex-direction: column;
     background-size: 110vh;
     justify-content: center;
   }
   .video {
-    margin-left: 10vh;
-    height: 90%;
+    // height: 100%;
+    width: 25vw;
     border-radius: 10px;
+    @media screen and (max-width: 1224px) {
+      width: 95%;
+      border-radius: 0;
+    }
   }
   .textContainer {
     // height: 40%;
@@ -101,13 +118,16 @@
       }
     }
     p {
-      color: #c5c5c5;
+      color: #fcfcfc;
       text-align: justify;
-      background-color: #0d0d0db0;
+      // background-color: #0d0d0db0;
       border-radius: 10px;
+      font-size: 1em;
+      width: 50vw;
       padding: 2.5%;
       @media screen and (max-width: 1224px) {
         background-color: transparent;
+        width: 90%;
         padding: 5%;
         color: #c5c5c5;
       }
@@ -173,6 +193,8 @@
         width: 100%;
         height: 10vh;
         color: #c5c5c5;
+        text-align-last: center;
+        padding: 0;
       }
     }
     .section3Button:hover {
@@ -180,10 +202,10 @@
     }
     p {
       font-size: 1em;
-      // text-align: justify;
-      // text-align-last: center;
       @media screen and (max-width: 1224px) {
         width: 80vw;
+        text-align: center;
+        padding: 0;
         color: #c5c5c5;
       }
     }
@@ -211,25 +233,29 @@
   }
 }
 .section5 {
-  top: 15vh;
   height: 85vh;
-  background-size: 100% 100%;
+  // background-size: 100% 100%;
   background-position-x: center;
-  background-position-y: center;
+  background-position-y: flex-end;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 1224px) {
     background-size: 100vh 100vw;
+    background-position-y: center;
     height: 90vh;
   }
   .comingSoon {
-    height: 30vh;
+    margin-top: 30vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    @media screen and (max-width: 1224px) {
+      margin-top: -20vh;
+    }
     p {
       margin: 0;
       font: 400 5vh "Vibur";
@@ -306,23 +332,41 @@
       #2f2f2f8e 61.54%,
       #000000 98.39%
     );
+
+    @media screen and (max-width: 1224px) {
+      width: 100vw;
+      overflow: hidden;
+    }
     .textAndImageContainer {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media screen and (max-width: 1224px) {
+        margin-top: 25vh;
+      }
       // height: 90%;
       .bannerText {
         margin-top: -100px;
         padding-left: 5vw;
         display: flex;
         flex-direction: column;
+        z-index: 1;
         h1 {
           font-size: 5.5em;
           line-height: 80px;
           margin: 0;
+          @media screen and (max-width: 1224px) {
+            font-size: 5em;
+          }
         }
       }
       .imageContainer {
+        @media screen and (max-width: 1224px) {
+          position: absolute;
+          overflow: hidden;
+          width: 100vw;
+          opacity: 0.4;
+        }
         img {
           height: 85vh;
         }
@@ -332,37 +376,58 @@
       margin-top: -15vh;
       display: flex;
       justify-content: center;
+      @media screen and (max-width: 1224px) {
+        margin-top: 0;
+      }
+
       p {
         text-align: center;
         width: 45%;
         font-size: 1.3em;
         color: #c5c5c5;
+        @media screen and (max-width: 1224px) {
+          justify-content: flex-end;
+          align-items: flex-end;
+          background-color: #0d0d0d;
+          z-index: 1;
+          font-size: 1em;
+          width: 80%;
+        }
       }
     }
   }
   .bottomSection {
     // height: 100%;
-    margin: 10vh 30vh;
+    margin: 10vh 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 1224px) {
+      margin: 5% 5%;
+    }
   }
   .modelContainer {
     overflow: hidden;
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 10px;
-    row-gap: 10px;
+    grid-template-columns: auto auto auto auto;
+
+    @media screen and (max-width: 1224px) {
+      grid-template-columns: auto auto;
+    }
+    // column-gap: 10px;
+    // row-gap: 10px;
     .imgContainer {
       width: 100%;
-      height: 100%;
+      // height: 100%;
       position: relative;
       transition: 0.3s scale;
+      border-radius: 20px;
       filter: grayscale(1);
       img {
         z-index: -1;
-        width: inherit;
+        width: 100%;
+        height: 100%;
       }
       .showDesc {
         position: absolute;
@@ -374,6 +439,9 @@
           font-size: 400%;
           color: #0d0d0d;
           background-color: #ffffffb7;
+          @media screen and (max-width: 1224px) {
+            font-size: 2em;
+          }
         }
       }
       .showMore {
@@ -396,9 +464,9 @@
       scale: 0.98;
       filter: grayscale(0);
       cursor: pointer;
-      img {
-        filter: blur(1.2px);
-      }
+      // img {
+      //   filter: opacity(0.5);
+      // }
     }
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../Components/Client";
+import Footer from "../Components/Footer";
 
 const ShowMore = (props) => {
   return (
@@ -14,7 +15,7 @@ const ShowMore = (props) => {
   );
 };
 const Gallery = () => {
-  const [showMore, setShowMore] = useState(0);
+  const [showMore, setShowMore] = useState(null);
 
   // Sanity Connection
   const [postData, setPostData] = useState(null);
@@ -34,7 +35,9 @@ const Gallery = () => {
             <h1>Welcome</h1>
             <h1>To</h1>
             <h1>The</h1>
-            <h1 style={{ color: "#82560c" }}>Exotic</h1>
+            <h1 style={{ color: "#82560c", backgroundColor: "#0d0d0d" }}>
+              Exotic
+            </h1>
             <h1>Gallery</h1>
           </div>
           <div className="imageContainer">
@@ -54,7 +57,7 @@ const Gallery = () => {
             postData.map((models, index) => (
               <div
                 className="imgContainer"
-                onMouseOver={() => {
+                onMouseEnter={() => {
                   setShowMore(index);
                 }}
                 onMouseLeave={() => {
@@ -69,6 +72,7 @@ const Gallery = () => {
             ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

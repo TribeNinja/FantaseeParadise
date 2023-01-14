@@ -83,11 +83,7 @@ function Home() {
               muted
               autoPlay
               loop
-            >
-              <audio
-                src={process.env.PUBLIC_URL + "/Assets/homeVideo.mp4"}
-              ></audio>
-            </video>
+            />
           </section>
         </section>
         {/* Total Model Management */}

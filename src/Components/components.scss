@@ -221,7 +221,6 @@ body {
 .formContainer {
   width: 100vw;
   height: 60vh;
-  // background-color: #8c6700;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -255,6 +254,9 @@ body {
         border: 1px solid #cd9706;
         h1 {
           font-size: 1em;
+          @media screen and (max-width: 1224px) {
+            text-align: center;
+          }
         }
       }
       a:hover {
