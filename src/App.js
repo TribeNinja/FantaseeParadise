@@ -7,6 +7,7 @@ import Gallery from "./Pages/Gallery";
 import "./App.scss";
 import Application from "./Pages/Application";
 import Release from "./Pages/Release";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
   return (
@@ -14,12 +15,14 @@ const App = () => {
       <div className="MainContainer">
         <Topbar />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/apply-now" element={<Application />} />
-          <Route path="/release-form" element={<Release />} />
-        </Routes>
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/apply-now" element={<Application />} />
+            <Route path="/release-form" element={<Release />} />
+          </Routes>
+        </ScrollToTop>
       </div>
     </>
   );
