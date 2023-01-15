@@ -57,6 +57,7 @@ const Gallery = () => {
             postData.map((models, index) => (
               <div
                 className="imgContainer"
+                key={index}
                 onMouseEnter={() => {
                   setShowMore(index);
                 }}

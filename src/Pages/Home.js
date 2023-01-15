@@ -1,6 +1,5 @@
 import "./Pages.scss";
 import { Translator, T, Config } from "react-translator-component";
-
 import Footer from "../Components/Footer";
 import { useEffect, useState } from "react";
 import Forms from "../Components/Forms";

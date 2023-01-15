@@ -2,17 +2,18 @@ import { makeAutoObservable } from "mobx";
 import { createContext } from "react";
 
 class Store {
-  show = false;
+  drawer = false;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setShow = () => {
-    this.show = !this.show;
-  };
   setFalse = () => {
-    this.show = false;
+    this.drawer = false;
+  };
+
+  setDrawer = (drawer) => {
+    this.drawer = drawer;
   };
 }
 
