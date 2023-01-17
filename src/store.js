@@ -3,6 +3,9 @@ import { createContext } from "react";
 
 class Store {
   drawer = false;
+  showProfile = null;
+  showImage = null;
+  showName = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -14,6 +17,18 @@ class Store {
 
   setDrawer = (drawer) => {
     this.drawer = drawer;
+  };
+
+  setShowProfile = (showProfile) => {
+    this.showProfile = showProfile;
+  };
+
+  setShowImage = (showImage) => {
+    this.showImage = showImage;
+  };
+
+  setShowName = (showName) => {
+    this.showName = showName;
   };
 }
 

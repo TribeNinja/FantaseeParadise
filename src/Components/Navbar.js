@@ -3,12 +3,13 @@ import { useContext } from "react";
 import { observer } from "mobx-react-lite";
 import "./components.scss";
 import { T, Translator } from "react-translator-component";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Store from "../store";
 
 const Navbar = () => {
   const store = useContext(Store);
   const { drawer, setDrawer, setFalse } = store;
+
   return (
     <Translator>
       <div className="navbarContainer">
@@ -20,7 +21,6 @@ const Navbar = () => {
             <Link to="/gallery">
               <li>{T("Gallery")}</li>
             </Link>
-
             <Link to="/">
               <li>
                 <img src={logo} alt={""} />

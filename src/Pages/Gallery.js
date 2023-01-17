@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import sanityClient from "../Components/Client";
 import Footer from "../Components/Footer";
+import Store from "../store";
+import { observer } from "mobx-react-lite";
 
 const ShowMore = (props) => {
   return (
@@ -15,6 +18,10 @@ const ShowMore = (props) => {
   );
 };
 const Gallery = () => {
+  const store = useContext(Store);
+  const { showProfile, setShowProfile, setShowImage, showImage, setShowName } =
+    store;
+
   const [showMore, setShowMore] = useState(null);
 
   // Sanity Connection
@@ -22,10 +29,10 @@ const Gallery = () => {
 
   useEffect(() => {
     sanityClient
-      .fetch(`*[_type == "models"]{name,image{asset->{_id,url}}}`)
+      .fetch(`*[_type == "models"]{name,slug,image{asset->{_id,url}}}`)
       .then((data) => setPostData(data))
       .catch(console.error);
-  }, []);
+  }, [showProfile]);
 
   return (
     <div className="galleryContainer">
@@ -54,23 +61,34 @@ const Gallery = () => {
       <div className="bottomSection">
         <div className="modelContainer">
           {postData &&
-            postData.map((models, index) => (
-              <div
-                className="imgContainer"
-                key={index}
-                onMouseEnter={() => {
-                  setShowMore(index);
-                }}
-                onMouseLeave={() => {
-                  setShowMore(null);
-                }}
-              >
-                <>
-                  <img src={models.image.asset.url} />
-                  {showMore === index && <ShowMore name={models.name} />}
-                </>
-              </div>
-            ))}
+            postData.map((models, index) => {
+              console.log(models);
+              return (
+                <div
+                  className="imgContainer"
+                  key={index}
+                  onMouseEnter={() => {
+                    setShowMore(index);
+                  }}
+                  onMouseLeave={() => {
+                    setShowMore(null);
+                  }}
+                  onClick={() => {
+                    setShowProfile(models.slug.current);
+                    setShowImage(models.image.asset.url);
+                    setShowName(models.name);
+                    console.log(models.slug.current);
+                  }}
+                >
+                  <>
+                    <Link to={`/models/${models.slug.current}`}>
+                      <img src={models.image.asset.url} />
+                      {showMore === index && <ShowMore name={models.name} />}
+                    </Link>
+                  </>
+                </div>
+              );
+            })}
         </div>
       </div>
       <Footer />
@@ -78,4 +96,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default observer(Gallery);
