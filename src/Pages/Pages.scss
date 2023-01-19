@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 .section0 {
   // background-position-x: 40%;
   // background-position-y: top;
@@ -14,6 +14,7 @@
   }
   height: 200vh;
   position: relative;
+  background-color: #0d0d0db0;
 }
 .section1 {
   height: 100vh;
@@ -36,10 +37,10 @@
       to right,
       #a17704,
       #a17704,
-      #856401,
+      #bc8d00,
+      #bc8d00,
       #a17704,
-      #a17704,
-      #332600
+      #856401
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -51,7 +52,7 @@
     justify-content: center;
     font-weight: 100;
     border-radius: 10px;
-    font-family: "Alex Brush", cursive;
+    font-family: "Great Vibes", cursive;
 
     // font: 400 10vh;
     @media screen and (max-width: 1224px) {
