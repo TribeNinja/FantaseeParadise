@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   Preload,
@@ -11,6 +11,7 @@ import {
   useProgress,
 } from "@react-three/drei";
 import "./components.scss";
+import sanityClient from "../Components/Client";
 
 function Image(props) {
   const ref = useRef();
@@ -26,14 +27,14 @@ function Image(props) {
   });
   return (
     <group ref={group}>
-      <ImageImpl ref={ref} {...props} />
+      <ImageImpl ref={ref} {...props} grayscale={props.blur} />
     </group>
   );
 }
 
 function Page({ m = 0.4, urls, ...props }) {
   const { width } = useThree((state) => state.viewport);
-  const w = width < 10 ? 1.5 / 3 : 1 / 3;
+  const w = 1.7 / 3;
   return (
     <group {...props}>
       <Image
@@ -45,6 +46,7 @@ function Page({ m = 0.4, urls, ...props }) {
         position={[0, 0, 0]}
         scale={[width * w - m * 2, 5, 1]}
         url={urls[1]}
+        blur={1}
       />
       {/* <Image
         position={[width * w, 0, 1]}
@@ -58,36 +60,30 @@ function Page({ m = 0.4, urls, ...props }) {
 const Pages = ({ ...props }) => {
   const { width } = useThree((state) => state.viewport);
 
+  // Sanity Connection
+  const [postData, setPostData] = useState(null);
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "models"]{name,slug,image{asset->{_id,url}},imageArray[]{asset->{_id,url}}}`
+      )
+      .then((data) => setPostData(data))
+      .catch(console.error);
+  }, []);
+
   return (
     <>
-      <Page
-        position={[-width * 0, 0, 0]}
-        urls={["/Assets/1.jpg", "/Assets/2.jpg"]}
-      />
-      <Page
-        position={[width * 1, 0, 0]}
-        urls={["/Assets/3.jpg", "/Assets/4.jpg"]}
-      />
-      <Page
-        position={[width * 2, 0, 0]}
-        urls={["./Assets/5.jpg", "./Assets/1.jpg"]}
-      />
-      <Page
-        position={[width * 3, 0, 0]}
-        urls={["./Assets/2.jpg", "./Assets/3.jpg"]}
-      />
-      <Page
-        position={[width * 4, 0, 0]}
-        urls={["./Assets/4.jpg", "./Assets/5.jpg"]}
-      />
-      <Page
-        position={[width * 5, 0, 0]}
-        urls={["./Assets/1.jpg", "./Assets/2.jpg"]}
-      />
-      <Page
-        position={[width * 6, 0, 0]}
-        urls={["./Assets/3.jpg", "./Assets/4.jpg"]}
-      />
+      {postData &&
+        postData.map((models, index) => {
+          return (
+            <>
+              <Page
+                position={[width * index, 0, 0]}
+                urls={[models.image.asset.url, models.image.asset.url]}
+              />
+            </>
+          );
+        })}
     </>
   );
 };

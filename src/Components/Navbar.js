@@ -16,13 +16,13 @@ const Navbar = () => {
         <div className="menu">
           <ul>
             <a href="/apply-now" target="_blank">
-              <li>{T("Apply Here")}</li>
+              <li onClick={() => setRefreshArray()}>{T("Apply Here")}</li>
             </a>
             <Link to="/gallery">
               <li onClick={() => setRefreshArray()}>{T("Gallery")}</li>
             </Link>
             <Link to="/">
-              <li>
+              <li onClick={() => setRefreshArray()}>
                 <img src={logo} alt={""} />
               </li>
             </Link>
@@ -41,17 +41,45 @@ const Navbar = () => {
                 }}
               ></div>
               <Link to="/">
-                <li onClick={setFalse}>{T("Home")}</li>
+                <li
+                  onClick={() => {
+                    setRefreshArray();
+                    setFalse();
+                  }}
+                >
+                  {T("Home")}
+                </li>
               </Link>
               <a href="/apply-now" target="_blank">
-                <li onClick={setFalse}>{T("Apply Here")}</li>
+                <li
+                  onClick={() => {
+                    setRefreshArray();
+                    setFalse();
+                  }}
+                >
+                  {T("Apply Here")}
+                </li>
               </a>
               <Link to="/gallery">
-                <li onClick={setFalse}>{T("Gallery")}</li>
+                <li
+                  onClick={() => {
+                    setFalse();
+                    setRefreshArray();
+                  }}
+                >
+                  {T("Gallery")}
+                </li>
               </Link>
 
               <li>Fantasee Party</li>
-              <li onClick={setFalse}>{T("Contact")}</li>
+              <li
+                onClick={() => {
+                  setRefreshArray();
+                  setFalse();
+                }}
+              >
+                {T("Contact")}
+              </li>
             </ul>
           </div>
         ) : (

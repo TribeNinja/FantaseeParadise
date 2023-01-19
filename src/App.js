@@ -26,7 +26,14 @@ const App = () => {
       .catch(console.error);
   }, [showProfile]);
   return (
-    <div className="MainContainer">
+    <div
+      className="MainContainer"
+      style={{
+        backgroundImage: `url(${
+          process.env.PUBLIC_URL + "/Assets/section1.jpg"
+        })`,
+      }}
+    >
       <Topbar />
       <Navbar />
       <ScrollToTop>

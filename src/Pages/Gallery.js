@@ -18,6 +18,7 @@ const ShowMore = (props) => {
   );
 };
 const Gallery = () => {
+  // Store
   const store = useContext(Store);
   const {
     showProfile,

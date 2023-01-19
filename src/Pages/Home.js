@@ -47,16 +47,17 @@ function Home() {
     };
     window.scroll(imageControl);
   }, [modelManage]);
+
   return (
     <>
       <div className="MainContainer">
         <section
           className="section0"
-          style={{
-            backgroundImage: `url(${
-              process.env.PUBLIC_URL + "/Assets/section1.jpg"
-            })`,
-          }}
+          // style={{
+          //   backgroundImage: `url(${
+          //     process.env.PUBLIC_URL + "/Assets/section1.jpg"
+          //   })`,
+          // }}
         >
           {/* Section 1 */}
           <section className="section1">

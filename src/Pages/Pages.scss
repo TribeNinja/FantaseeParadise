@@ -1,18 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@700&display=swap");
 .section0 {
-  background-position-x: 40%;
-  background-position-y: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-y: scroll;
-
+  // background-position-x: 40%;
+  // background-position-y: top;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // overflow-y: scroll;
+  background-color: transparent;
   @media screen and (max-width: 1224px) {
     background-position-x: 80%;
     background-size: 100%;
     background-position: bottom;
-    height: 100vh;
+    height: 250vh;
   }
-  height: 100vh;
+  height: 200vh;
+  position: relative;
 }
 .section1 {
   height: 100vh;
@@ -67,6 +68,7 @@
 }
 .section2 {
   // height: 100vh;
+  position: absolute;
   width: 95vw;
   overflow: hidden;
   display: flex;
@@ -246,16 +248,17 @@
   background-position-x: center;
   background-position-y: flex-end;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #0d0d0dc8;
   @media screen and (max-width: 1224px) {
     background-size: 100vh 100vw;
     background-position-y: center;
-    height: 90vh;
+    height: 50vh;
   }
   .comingSoon {
-    margin-top: 30vh;
     height: 40vh;
     display: flex;
     flex-direction: column;
@@ -329,6 +332,7 @@
 
 // GALLERY PAGE
 .galleryContainer {
+  background-color: #0d0d0d;
   .topSection {
     height: 85vh;
     padding-top: 15vh;
@@ -419,7 +423,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: auto auto auto auto;
-
+    column-gap: 10px;
     @media screen and (max-width: 1224px) {
       grid-template-columns: auto auto;
     }
@@ -491,22 +495,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1224px) {
+    height: 100%;
+    padding-top: 15vh;
+  }
   .FormTitle {
     // width: 80vw;
     padding: 0 10vh;
     background-color: #000;
     color: #c5c5c5;
+    @media screen and (max-width: 1224px) {
+      padding: 0;
+    }
   }
   .formContents {
     height: 100%;
     width: 90vw;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 1224px) {
+      width: 100vw;
+    }
     form {
       width: 80%;
       display: grid;
       grid-template-columns: auto auto;
       column-gap: 5%;
+      @media screen and (max-width: 1224px) {
+        grid-template-columns: auto;
+      }
       label {
         width: 100%;
       }
@@ -563,11 +580,19 @@
   align-items: center;
   justify-content: center;
   overflow: scroll;
+  @media screen and (max-width: 1224px) {
+    padding-top: 10vh;
+    overflow: hidden;
+    height: 100%;
+  }
   .FormTitle {
     // width: 80vw;
     padding: 0 20vh;
     background-color: #000;
     color: #c5c5c5;
+    @media screen and (max-width: 1224px) {
+      padding: 0 5vh 5vh 5vh;
+    }
   }
   .formContents {
     height: 100%;
@@ -612,19 +637,68 @@
 .profileContainer {
   height: 100%;
   width: 80vw;
-  padding: 15% 10% 10% 10%;
+  padding: 15% 10% 0% 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #0d0d0d;
+  @media screen and (max-width: 1224px) {
+    padding: 30% 10% 0% 10%;
+  }
+  .backBtn {
+    position: fixed;
+    height: 5vw;
+    width: 5vw;
+    background-color: #a17704;
+    border-radius: 50%;
+    z-index: 2;
+    top: 20vh;
+    right: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s scale;
+    cursor: pointer;
+    @media screen and (max-width: 1224px) {
+      height: 15vw;
+      width: 15vw;
+      top: 2vh;
+      left: 2vh;
+      z-index: 23;
+      background-color: transparent;
+    }
+    .arrow {
+      border: solid #fff;
+      width: 2vh;
+      height: 2vh;
+
+      border-width: 0 5px 5px 0;
+      display: inline-block;
+      // height: 10%;
+      // padding: 3px;
+      margin-left: 1vh;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+  }
+  .backBtn:hover {
+    scale: 0.9;
+  }
   .profileTop {
     width: 100%;
-    // background-color: #34332e;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    z-index: 20;
     .imgContainer {
       height: 50vh;
+      @media screen and (max-width: 1224px) {
+        height: 22vh;
+      }
       img {
         height: 100%;
         border-radius: 20px;
@@ -637,21 +711,37 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @media screen and (max-width: 1224px) {
+        width: 50%;
+        h1 {
+          font-size: 1em;
+        }
+      }
     }
   }
   .profileBody {
     // height: 100%;
+    margin: 20px 0 0 0;
     width: 100%;
-    background-color: #0d0d0d;
     display: grid;
+    padding: 20px;
     grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    border-radius: 20px;
+    z-index: 1;
+    @media screen and (max-width: 1224px) {
+      grid-template-columns: auto auto;
+    }
+
     img {
       width: 100%;
+      border-radius: 20px;
     }
   }
   .footerContainer {
-    position: fixed;
     bottom: 0;
+    position: relative;
   }
 }
 
@@ -678,7 +768,7 @@
   opacity: 0.8;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 .wave:nth-of-type(2) {
