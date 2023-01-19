@@ -610,7 +610,7 @@
 
 // Profile
 .profileContainer {
-  height: 100vh;
+  height: 100%;
   width: 80vw;
   padding: 15% 10% 10% 10%;
   display: flex;
@@ -640,7 +640,7 @@
     }
   }
   .profileBody {
-    height: 30vh;
+    // height: 100%;
     width: 100%;
     background-color: #0d0d0d;
     display: grid;
@@ -648,6 +648,10 @@
     img {
       width: 100%;
     }
+  }
+  .footerContainer {
+    position: fixed;
+    bottom: 0;
   }
 }
 

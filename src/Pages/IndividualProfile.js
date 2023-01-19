@@ -1,6 +1,7 @@
 import React from "react";
 import "./Pages.scss";
 import { observer } from "mobx-react-lite";
+import Footer from "../Components/Footer";
 
 const IndividualProfile = (props) => {
   return (
@@ -33,6 +34,9 @@ const IndividualProfile = (props) => {
             </>
           );
         })}
+      </div>
+      <div className="footerContainer">
+        <Footer />
       </div>
     </div>
   );
