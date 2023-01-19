@@ -6,6 +6,7 @@ class Store {
   showProfile = null;
   showImage = null;
   showName = null;
+  showImageArray = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -29,6 +30,13 @@ class Store {
 
   setShowName = (showName) => {
     this.showName = showName;
+  };
+
+  setShowImageArray = (imageArray) => {
+    this.showImageArray = imageArray;
+  };
+  setRefreshArray = () => {
+    this.showImageArray = [];
   };
 }
 

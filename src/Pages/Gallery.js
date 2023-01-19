@@ -19,8 +19,14 @@ const ShowMore = (props) => {
 };
 const Gallery = () => {
   const store = useContext(Store);
-  const { showProfile, setShowProfile, setShowImage, showImage, setShowName } =
-    store;
+  const {
+    showProfile,
+    showImageArray,
+    setShowProfile,
+    setShowImage,
+    setShowImageArray,
+    setShowName,
+  } = store;
 
   const [showMore, setShowMore] = useState(null);
 
@@ -29,7 +35,9 @@ const Gallery = () => {
 
   useEffect(() => {
     sanityClient
-      .fetch(`*[_type == "models"]{name,slug,image{asset->{_id,url}}}`)
+      .fetch(
+        `*[_type == "models"]{name,slug,image{asset->{_id,url}},imageArray[]{asset->{_id,url}}}`
+      )
       .then((data) => setPostData(data))
       .catch(console.error);
   }, [showProfile]);
@@ -62,7 +70,6 @@ const Gallery = () => {
         <div className="modelContainer">
           {postData &&
             postData.map((models, index) => {
-              console.log(models);
               return (
                 <div
                   className="imgContainer"
@@ -77,7 +84,13 @@ const Gallery = () => {
                     setShowProfile(models.slug.current);
                     setShowImage(models.image.asset.url);
                     setShowName(models.name);
-                    console.log(models.slug.current);
+                    models.imageArray != undefined &&
+                      models.imageArray.map((item, idx) => {
+                        setShowImageArray([
+                          showImageArray.push(item.asset.url),
+                          ...showImageArray,
+                        ]);
+                      });
                   }}
                 >
                   <>

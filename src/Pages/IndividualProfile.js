@@ -1,5 +1,6 @@
 import React from "react";
 import "./Pages.scss";
+import { observer } from "mobx-react-lite";
 
 const IndividualProfile = (props) => {
   return (
@@ -20,9 +21,21 @@ const IndividualProfile = (props) => {
           <h1>Name: </h1>
         </div>
       </div>
-      <div className="profileBody"></div>
+      <div className="profileBody">
+        {props.imageArray.map((item, index) => {
+          return (
+            <>
+              {index > 0 && (
+                <div key={index}>
+                  <img src={item} />
+                </div>
+              )}
+            </>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
-export default IndividualProfile;
+export default observer(IndividualProfile);

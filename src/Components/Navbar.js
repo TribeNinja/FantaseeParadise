@@ -8,7 +8,7 @@ import Store from "../store";
 
 const Navbar = () => {
   const store = useContext(Store);
-  const { drawer, setDrawer, setFalse } = store;
+  const { drawer, setDrawer, setFalse, setRefreshArray } = store;
 
   return (
     <Translator>
@@ -19,7 +19,7 @@ const Navbar = () => {
               <li>{T("Apply Here")}</li>
             </a>
             <Link to="/gallery">
-              <li>{T("Gallery")}</li>
+              <li onClick={() => setRefreshArray()}>{T("Gallery")}</li>
             </Link>
             <Link to="/">
               <li>

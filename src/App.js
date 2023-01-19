@@ -16,10 +16,12 @@ import Store from "./store";
 const App = () => {
   const [data, setData] = useState(null);
   const store = useContext(Store);
-  const { showProfile, showImage, showName } = store;
+  const { showProfile, showImage, showName, showImageArray } = store;
   useEffect(() => {
     sanityClient
-      .fetch(`*[_type == "models"]{slug,image{asset->{_id,url}}}`)
+      .fetch(
+        `*[_type == "models"]{slug,image{asset->{_id,url}}},imageArray[]{asset->{_id,url}}`
+      )
       .then((data) => setData(data))
       .catch(console.error);
   }, [showProfile]);
@@ -35,7 +37,13 @@ const App = () => {
           <Route path="/release-form" element={<Release />} />
           <Route
             path={`/models/${showProfile}`}
-            element={<IndividualProfile data={showImage} name={showName} />}
+            element={
+              <IndividualProfile
+                data={showImage}
+                name={showName}
+                imageArray={showImageArray}
+              />
+            }
           />
         </Routes>
       </ScrollToTop>

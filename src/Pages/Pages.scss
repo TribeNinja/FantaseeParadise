@@ -619,7 +619,7 @@
   align-items: center;
   .profileTop {
     width: 100%;
-    background-color: #34332e;
+    // background-color: #34332e;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -636,6 +636,7 @@
       // background-color: #a17a06;
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
   }
   .profileBody {
@@ -644,6 +645,9 @@
     background-color: #0d0d0d;
     display: grid;
     grid-template-columns: auto auto auto;
+    img {
+      width: 100%;
+    }
   }
 }
 
