@@ -32,27 +32,22 @@ function Image(props) {
   );
 }
 
-function Page({ m = 0.4, urls, ...props }) {
+function Page({ m = 0, urls, ...props }) {
   const { width } = useThree((state) => state.viewport);
-  const w = 1.7 / 3;
+  const w = 1.5 / 3;
   return (
     <group {...props}>
       <Image
-        position={[-width * w, 0, -1]}
-        scale={[width * w - m * 2, 5, 1]}
-        url={urls[0]}
-      />
-      <Image
-        position={[0, 0, 0]}
-        scale={[width * w - m * 2, 5, 1]}
+        position={[width * w, 0, -1]}
+        scale={[5, 10, 10]}
         url={urls[1]}
         blur={1}
       />
-      {/* <Image
-        position={[width * w, 0, 1]}
+      <Image
+        position={[width * w, 0, 0]}
         scale={[width * w - m * 2, 5, 1]}
-        url={urls[2]}
-      /> */}
+        url={urls[0]}
+      />
     </group>
   );
 }
