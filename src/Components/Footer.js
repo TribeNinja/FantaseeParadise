@@ -1,8 +1,14 @@
 import React from "react";
 import { AiFillInstagram, AiFillMail } from "react-icons/ai";
+import logo from "../Assets/paradise_white.png";
 const Footer = () => {
   return (
     <div className="footerContainer">
+      <div className="items">
+        <div className="social">
+          <img src={logo} alt={""} />
+        </div>
+      </div>
       <div className="items">
         <div className="social">
           <AiFillInstagram size={30} color="#cd9706" />
