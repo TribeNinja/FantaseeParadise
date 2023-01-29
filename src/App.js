@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import Home from "./Pages/Home";
@@ -12,17 +12,21 @@ import ScrollToTop from "./Components/ScrollToTop";
 import IndividualProfile from "./Pages/IndividualProfile";
 import sanityClient from "./Components/Client";
 import Store from "./store";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import ImagePopUp from "./Components/ImagePopUp";
 
 const App = () => {
-  const [data, setData] = useState(null);
   const store = useContext(Store);
-  const { showProfile, showImage, showName, showImageArray } = store;
+  const { showProfile, showImage, showName, showImageArray, clicked } = store;
+
   useEffect(() => {
+    AOS.init();
     sanityClient
       .fetch(
         `*[_type == "models"]{slug,image{asset->{_id,url}}},imageArray[]{asset->{_id,url}}`
       )
-      .then((data) => setData(data))
+      .then((data) => data)
       .catch(console.error);
   }, [showProfile]);
   return (
@@ -36,6 +40,7 @@ const App = () => {
     >
       <Topbar />
       <Navbar />
+      {clicked && <ImagePopUp />}
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Home />} />

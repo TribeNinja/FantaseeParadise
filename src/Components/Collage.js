@@ -20,8 +20,8 @@ function Image(props) {
   useFrame((state, delta) => {
     group.current.position.z = THREE.MathUtils.damp(
       group.current.position.z,
-      Math.max(0, data.delta * 50),
-      4,
+      Math.max(0, data.delta),
+      1,
       delta
     );
   });
@@ -37,14 +37,9 @@ function Page({ m = 0, urls, ...props }) {
   const w = 1.5 / 3;
   return (
     <group {...props}>
+      <Image position={[0, 0, -1]} scale={[5, 8, 5]} url={urls[1]} blur={1} />
       <Image
-        position={[width * w, 0, -1]}
-        scale={[5, 10, 10]}
-        url={urls[1]}
-        blur={1}
-      />
-      <Image
-        position={[width * w, 0, 0]}
+        position={[0, 0, 0]}
         scale={[width * w - m * 2, 5, 1]}
         url={urls[0]}
       />
@@ -72,10 +67,12 @@ const Pages = ({ ...props }) => {
         postData.map((models, index) => {
           return (
             <>
-              <Page
-                position={[width * index, 0, 0]}
-                urls={[models.image.asset.url, models.image.asset.url]}
-              />
+              {
+                <Page
+                  position={[width * index, 0, 0]}
+                  urls={[models.image.asset.url, models.image.asset.url]}
+                />
+              }
             </>
           );
         })}

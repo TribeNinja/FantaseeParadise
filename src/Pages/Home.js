@@ -61,12 +61,16 @@ function Home() {
         >
           {/* Section 1 */}
           <section className="section1">
-            <p>{T("See your FantaSees come to life")}</p>
+            <p data-aos="zoom-in">{T("See your FantaSees come to life")}</p>
           </section>
 
           {/* Section 2 */}
           <section className="section2">
-            <div className="textContainer">
+            <div
+              className="textContainer"
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
               <div className="title">
                 <h2>{T("About Us")}</h2>
                 <div className="line"></div>
@@ -78,6 +82,9 @@ function Home() {
               </p>
             </div>
             <video
+              data-aos="fade-left"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-delay="50"
               className="video"
               src={process.env.PUBLIC_URL + "/Assets/homeVideo.mp4"}
               muted
@@ -96,7 +103,12 @@ function Home() {
           }}
         >
           <div className="section3Wrapper">
-            <div className="writing">
+            <div
+              className="writing"
+              data-aos="fade-right"
+              data-aos-anchor-placement="center-bottom"
+              data-aos-delay="50"
+            >
               <h1>{T("Total Model Management")}</h1>
               <p>
                 {T(
@@ -124,12 +136,24 @@ function Home() {
               process.env.PUBLIC_URL + "/Assets/fparty.png"
             })`,
           }}
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
         >
           <div class="comingSoon">
-            <b>
+            <b
+              data-aos="fade-down"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-delay="50"
+            >
               <span>Where</span>-FantaSee-<span>becomes</span>-reality
             </b>
-            <p>Coming Soon</p>
+            <p
+              data-aos="fade-down"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-delay="100"
+            >
+              Coming Soon
+            </p>
           </div>
         </section>
         <Footer />

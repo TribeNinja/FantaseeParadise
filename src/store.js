@@ -7,6 +7,8 @@ class Store {
   showImage = null;
   showName = null;
   showImageArray = [];
+  popUp = null;
+  clicked = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -36,7 +38,14 @@ class Store {
     this.showImageArray = imageArray;
   };
   setRefreshArray = () => {
-    this.showImageArray = [];
+    this.showImageArray.length = 0;
+  };
+
+  setPopUp = (popUp) => {
+    this.popUp = popUp;
+  };
+  setClicked = () => {
+    this.clicked = !this.clicked;
   };
 }
 

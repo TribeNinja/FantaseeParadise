@@ -27,6 +27,7 @@ const Gallery = () => {
     setShowImage,
     setShowImageArray,
     setShowName,
+    setRefreshArray,
   } = store;
 
   const [showMore, setShowMore] = useState(null);
@@ -48,27 +49,42 @@ const Gallery = () => {
       <div className="topSection">
         <div className="textAndImageContainer">
           <div className="bannerText">
-            <h1>Welcome</h1>
-            <h1>To</h1>
-            <h1>The</h1>
-            <h1 style={{ color: "#82560c", backgroundColor: "#0d0d0d" }}>
+            <h1 data-aos="zoom-in">Welcome</h1>
+            <h1 data-aos="zoom-in" data-aos-delay="50">
+              To
+            </h1>
+            <h1 data-aos="zoom-in" data-aos-delay="100">
+              The
+            </h1>
+            <h1
+              style={{ color: "#82560c", backgroundColor: "#0d0d0d" }}
+              data-aos="zoom-in"
+              data-aos-delay="150"
+            >
               Exotic
             </h1>
-            <h1>Gallery</h1>
+            <h1 data-aos="zoom-in" data-aos-delay="200">
+              Gallery
+            </h1>
           </div>
           <div className="imageContainer">
-            <img src={process.env.PUBLIC_URL + "/Assets/GalleryBanner.png"} />
+            <img
+              src={process.env.PUBLIC_URL + "/Assets/GalleryBanner.png"}
+              alt="Banner"
+            />
           </div>
         </div>
         <div className="heroText">
           <p>
-            Get ready to be swept off your feet and transported to a world of
-            exotic pleasure – meet our models today!
+            <span data-aos="zoom-in" data-aos-delay="250">
+              Get ready to be swept off your feet and transported to a world of
+              exotic pleasure – meet our models today!
+            </span>
           </p>
         </div>
       </div>
       <div className="bottomSection">
-        <div className="modelContainer">
+        <div className="modelContainer" data-aos="fade-in">
           {postData &&
             postData.map((models, index) => {
               return (
@@ -85,18 +101,24 @@ const Gallery = () => {
                     setShowProfile(models.slug.current);
                     setShowImage(models.image.asset.url);
                     setShowName(models.name);
-                    models.imageArray != undefined &&
+                    models.imageArray !== undefined &&
                       models.imageArray.map((item, idx) => {
-                        setShowImageArray([
-                          showImageArray.push(item.asset.url),
-                          ...showImageArray,
-                        ]);
+                        setRefreshArray();
+                        return (
+                          <>
+                            {}
+                            {setShowImageArray([
+                              showImageArray.push(item.asset.url),
+                              ...showImageArray,
+                            ])}
+                          </>
+                        );
                       });
                   }}
                 >
                   <>
                     <Link to={`/models/${models.slug.current}`}>
-                      <img src={models.image.asset.url} />
+                      <img src={models.image.asset.url} alt="models" />
                       {showMore === index && <ShowMore name={models.name} />}
                     </Link>
                   </>

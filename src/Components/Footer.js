@@ -4,7 +4,7 @@ import logo from "../Assets/paradise_white.png";
 const Footer = () => {
   return (
     <div className="footerContainer">
-      <div className="items">
+      <div className="items borderItem">
         <div className="social">
           <img src={logo} alt={""} />
         </div>
@@ -12,19 +12,19 @@ const Footer = () => {
       <div className="items">
         <div className="social">
           <AiFillInstagram size={30} color="#cd9706" />
-          <p>@fantaseeparadise</p>
-        </div>
-      </div>
-      <div className="items">
-        <div className="social">
           <AiFillMail size={30} color="#cd9706" />
-          <p>fantaseeparadise@gmail.com</p>
+          <div>
+            <h4>About us</h4>
+          </div>
+          <div>
+            <h4>Contact</h4>
+          </div>
         </div>
       </div>
+
       <div className="items">
         <div className="social">
-          <p>© All rights reserved</p>
-          <p> Fantasee Paradise 2022</p>
+          <p>© All rights reserved Fantasee Paradise 2022</p>
         </div>
       </div>
     </div>

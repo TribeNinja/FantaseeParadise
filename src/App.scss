@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
 .MainContainer {
   height: 100%;
-  width: 100vw;
-  // overflow: hidden;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
   color: #ffffff;
   // background-color: #fff;
   background-position-x: 40%;

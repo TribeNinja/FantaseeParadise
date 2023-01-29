@@ -14,10 +14,10 @@
   }
   height: 200vh;
   position: relative;
-  background-color: #0d0d0db0;
+  background-color: #000000c8;
 }
 .section1 {
-  height: 100vh;
+  height: 99vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@
   margin: 0;
   font-weight: 700;
   font-size: 1.5rem;
-
+  overflow: hidden;
   p {
     width: 100%;
     height: 60vh;
@@ -53,6 +53,7 @@
     font-weight: 100;
     border-radius: 10px;
     font-family: "Great Vibes", cursive;
+    overflow: hidden;
 
     // font: 400 10vh;
     @media screen and (max-width: 1224px) {
@@ -253,7 +254,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0d0d0dc8;
+  background-color: #000000c8;
   @media screen and (max-width: 1224px) {
     background-size: 100vh 100vw;
     background-position-y: center;
@@ -267,11 +268,12 @@
     align-items: center;
     @media screen and (max-width: 1224px) {
       margin-top: -20vh;
+      height: 40vh;
     }
     p {
       margin: 0;
-      font: 400 5vh "Vibur";
-      color: #82560c;
+      font: 400 5vh "transparent";
+      color: #f59b00;
       text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #000, 0 0 0.5em #000,
         0 0 0.1em #000, 0 10px 3px #000;
       @media screen and (max-width: 1224px) {
@@ -279,14 +281,14 @@
       }
     }
     b {
-      font: 400 5vh "Vibur";
+      font: 400 5vh;
       font-size: 2em;
       color: #fee;
       text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #82560c, 0 0 0.5em #82560c,
         0 0 0.1em #82560c, 0 10px 3px #000;
 
       @media screen and (max-width: 1224px) {
-        font-size: 1.5em;
+        font-size: 1.25em;
       }
       span {
         animation: blink linear infinite 2s;
@@ -401,10 +403,11 @@
         @media screen and (max-width: 1224px) {
           justify-content: flex-end;
           align-items: flex-end;
-          background-color: #0d0d0d;
-          z-index: 1;
+          z-index: 21;
           font-size: 1em;
-          width: 80%;
+          width: 90%;
+          background-color: #0d0d0d;
+          padding: 5%;
         }
       }
     }
@@ -479,9 +482,6 @@
       scale: 0.98;
       filter: grayscale(0);
       cursor: pointer;
-      // img {
-      //   filter: opacity(0.5);
-      // }
     }
   }
 }
@@ -507,6 +507,9 @@
     border-radius: 20px;
     color: #c5c5c5;
     @media screen and (max-width: 1224px) {
+      width: 100%;
+      text-align: center;
+      border-radius: 0px;
       padding: 0;
     }
   }
@@ -543,14 +546,14 @@
         width: 100%;
         border-radius: 10px;
         border: 1px solid #cd9706;
-        background-color: transparent;
+        background: linear-gradient(to bottom, #000, #181818, #000);
         color: #c5c5c5;
         text-indent: 10px;
       }
 
       input[type="submit"] {
         margin-top: 10%;
-        background-color: #cd9706;
+        background: #cd9706;
         color: #1d1d1d;
         cursor: pointer;
         transition: scale 0.3s;
@@ -590,7 +593,7 @@
   .FormTitle {
     // width: 80vw;
     padding: 0 20vh;
-    background-color: #000;
+    background: linear-gradient(to bottom, #000, #181818, #000);
     color: #c5c5c5;
     @media screen and (max-width: 1224px) {
       padding: 0 5vh 5vh 5vh;
@@ -616,14 +619,14 @@
         width: 100%;
         border-radius: 10px;
         border: 1px solid #cd9706;
-        background-color: transparent;
+        background: linear-gradient(to bottom, #000, #181818, #000);
         color: #c5c5c5;
         text-indent: 10px;
       }
 
       input[type="submit"] {
-        margin-top: 2%;
-        background-color: #cd9706;
+        margin-top: 15%;
+        background: #cd9706;
         color: #1d1d1d;
         transition: scale 0.3s;
         cursor: pointer;
@@ -641,6 +644,7 @@
   width: 80vw;
   padding: 15% 10% 0% 10%;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -650,11 +654,12 @@
   }
   .backBtn {
     position: fixed;
-    height: 5vw;
+    height: 2vw;
     width: 5vw;
-    background-color: #a17704;
-    border-radius: 50%;
-    z-index: 2;
+    background: linear-gradient(to right, #000000, #0d0d0d, #000000);
+    border-radius: 5%;
+    border: 2px solid #82560c;
+    z-index: 21;
     top: 20vh;
     right: 20vh;
     display: flex;
@@ -663,23 +668,23 @@
     transition: 0.2s scale;
     cursor: pointer;
     @media screen and (max-width: 1224px) {
-      height: 15vw;
+      height: 8vw;
       width: 15vw;
-      top: 2vh;
+      top: 3vh;
       left: 2vh;
       z-index: 23;
       background-color: transparent;
     }
     .arrow {
       border: solid #fff;
-      width: 2vh;
-      height: 2vh;
+      width: 1vh;
+      height: 1vh;
 
-      border-width: 0 5px 5px 0;
+      border-width: 0 2px 2px 0;
       display: inline-block;
       // height: 10%;
       // padding: 3px;
-      margin-left: 1vh;
+      margin-left: 0.5vh;
       transform: rotate(135deg);
       -webkit-transform: rotate(135deg);
     }
@@ -694,12 +699,15 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-
     z-index: 20;
+
+    @media screen and (max-width: 1224px) {
+      flex-direction: column;
+    }
     .imgContainer {
       height: 50vh;
       @media screen and (max-width: 1224px) {
-        height: 22vh;
+        height: 50vh;
       }
       img {
         height: 100%;
@@ -707,14 +715,17 @@
       }
     }
     .textContainer {
-      height: 100%;
-      width: 60%;
+      width: 70%;
       // background-color: #a17a06;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      h1 {
+        font-size: 1.2em;
+      }
       @media screen and (max-width: 1224px) {
-        width: 50%;
+        width: 100%;
+        height: 100%;
         h1 {
           font-size: 1em;
         }
@@ -739,12 +750,17 @@
     img {
       width: 100%;
       border-radius: 20px;
+      cursor: pointer;
     }
   }
+
   .footerContainer {
     bottom: 0;
     position: relative;
   }
+}
+.profileImageClicked {
+  filter: blur(5px);
 }
 
 @keyframes gradient {

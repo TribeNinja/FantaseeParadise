@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { observer } from "mobx-react-lite";
 import "./components.scss";
 import { T, Translator } from "react-translator-component";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Store from "../store";
 
 const Navbar = () => {
@@ -37,48 +37,61 @@ const Navbar = () => {
                 className="sideBarCloseButton"
                 onClick={() => {
                   setDrawer(false);
-                  console.log(drawer);
                 }}
+                data-aos="zoom-out-left"
               ></div>
-              <Link to="/">
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <li
                   onClick={() => {
                     setRefreshArray();
                     setFalse();
                   }}
+                  data-aos="fade-right"
                 >
-                  {T("Home")}
+                  <h1>{T("Home")}</h1>
                 </li>
               </Link>
-              <a href="/apply-now" target="_blank">
+              <a
+                href="/apply-now"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
                 <li
                   onClick={() => {
                     setRefreshArray();
                     setFalse();
                   }}
+                  data-aos="fade-right"
+                  data-aos-delay="50"
                 >
-                  {T("Apply Here")}
+                  <h1>{T("Apply Here")}</h1>
                 </li>
               </a>
-              <Link to="/gallery">
+              <Link to="/gallery" style={{ textDecoration: "none" }}>
                 <li
                   onClick={() => {
                     setFalse();
                     setRefreshArray();
                   }}
+                  data-aos="fade-right"
+                  data-aos-delay="100"
                 >
-                  {T("Gallery")}
+                  <h1>{T("Gallery")}</h1>
                 </li>
               </Link>
 
-              <li>Fantasee Party</li>
+              <li data-aos="fade-right" data-aos-delay="150">
+                <h1>Fantasee Party</h1>
+              </li>
               <li
                 onClick={() => {
                   setRefreshArray();
                   setFalse();
                 }}
+                data-aos="fade-right"
+                data-aos-delay="200"
               >
-                {T("Contact")}
+                <h1>{T("Contact")}</h1>
               </li>
             </ul>
           </div>
@@ -90,9 +103,17 @@ const Navbar = () => {
               console.log(drawer);
             }}
           >
-            <div className="hBurger"></div>
-            <div className="hBurger"></div>
-            <div className="hBurger"></div>
+            <div className="hBurger" data-aos="fade-left"></div>
+            <div
+              className="hBurger"
+              data-aos="fade-left"
+              data-aos-delay="50"
+            ></div>
+            <div
+              className="hBurger"
+              data-aos="fade-left"
+              data-aos-delay="100"
+            ></div>
           </div>
         )}
       </div>
