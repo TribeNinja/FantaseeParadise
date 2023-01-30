@@ -4,8 +4,9 @@ import Footer from "../Components/Footer";
 import "./Pages.scss";
 import { Translator, T } from "react-translator-component";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TranslatorApplication() {
   return (
@@ -16,7 +17,8 @@ function TranslatorApplication() {
 }
 
 const Application = () => {
-  const notify = () => toast("Wow so easy !");
+  const navigate = useNavigate();
+  const notify = () => toast("Form Submitted !");
   const form = useRef();
   const sendEmail = (e) => {
     emailjs
@@ -37,10 +39,10 @@ const Application = () => {
     e.preventDefault();
     e.target.reset();
     notify();
+    navigate("/");
   };
   return (
     <>
-      <ToastContainer />
       <div className="FormContainer">
         <div className="FormTitle">
           <h1>{T("Application Form")}</h1>
@@ -49,36 +51,36 @@ const Application = () => {
           <form ref={form} onSubmit={sendEmail}>
             <label>
               <p>Name</p>
-              <input type="text" name="name" />
+              <input type="text" name="name" required />
             </label>
             <label>
               <p>City/State</p>
-              <input type="text" name="state" />
+              <input type="text" name="state" required maxLength={2} />
             </label>
             <label>
               <p>Date of Birth</p>
-              <input type="date" color="#c5c5c5" name="dob" />
+              <input type="date" color="#c5c5c5" name="dob" required />
             </label>
             <div>
               <p>Sex</p>
               <div className="sex" aria-required>
                 <label className="radioContainer">
                   <p>Female</p>
-                  <input type="radio" name="sex" />
+                  <input type="radio" name="sex" value="Female" />
                 </label>
                 <label className="radioContainer">
                   <p>Male</p>
-                  <input type="radio" name="sex" />
+                  <input type="radio" name="sex" value="Male" />
                 </label>
                 <label className="radioContainer">
                   <p>Other</p>
-                  <input type="radio" name="sex" />
+                  <input type="radio" name="sex" value="Other" />
                 </label>
               </div>
             </div>
             <label>
               <p>Phone Number</p>
-              <input type="tel" name="tel" />
+              <input type="tel" name="tel" required />
             </label>
             <label>
               <p>Email</p>

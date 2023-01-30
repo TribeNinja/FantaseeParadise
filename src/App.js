@@ -15,6 +15,8 @@ import Store from "./store";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ImagePopUp from "./Components/ImagePopUp";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const store = useContext(Store);
@@ -38,6 +40,18 @@ const App = () => {
         })`,
       }}
     >
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Topbar />
       <Navbar />
       {clicked && <ImagePopUp />}
