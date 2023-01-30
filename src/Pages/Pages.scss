@@ -184,6 +184,7 @@
         h1 {
           margin: 0;
           color: #cd9706;
+          text-align: center;
         }
         height: 80%;
         padding: 5%;
@@ -488,7 +489,7 @@
 
 // FORM ITEM CONTAINER
 .FormContainer {
-  height: 100vh;
+  height: 100%;
   padding-top: 20vh;
   padding-bottom: 5vh;
   width: 100vw;
@@ -496,6 +497,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to bottom, #0000008a, #1818188a, #0000008a);
   @media screen and (max-width: 1224px) {
     height: 100%;
     padding-top: 15vh;
@@ -503,7 +505,6 @@
   .FormTitle {
     // width: 80vw;
     padding: 0 10vh;
-    background-color: #000;
     border-radius: 20px;
     color: #c5c5c5;
     @media screen and (max-width: 1224px) {
@@ -515,7 +516,7 @@
   }
   .formContents {
     height: 100%;
-    width: 90vw;
+    width: 60vw;
     display: flex;
     justify-content: center;
     @media screen and (max-width: 1224px) {
@@ -524,23 +525,56 @@
     form {
       width: 80%;
       display: grid;
-      grid-template-columns: auto auto;
-      column-gap: 5%;
+      grid-template-columns: auto;
+
       @media screen and (max-width: 1224px) {
         grid-template-columns: auto;
       }
       label {
         width: 100%;
       }
+      p {
+        font-weight: 700;
+      }
       .sex {
+        width: 100%;
         display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: 0.5px solid #cd9706;
+        background: linear-gradient(to bottom, #000, #181818, #000);
+        border-radius: 10px;
         .radioContainer {
-          width: 50%;
+          padding-left: 20px;
           display: flex;
-          justify-content: space-around;
+          justify-content: space-evenly;
           align-items: center;
+          cursor: pointer;
         }
       }
+
+      input[type="file"]::file-selector-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        font-weight: 700;
+        border: 0.5px solid #cd9706;
+        padding: 0.2em 0.4em;
+        border-radius: 10px;
+        background-color: transparent;
+        transition: 0.3s color;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        color: #82560c;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      input[type="file"]::file-selector-button:hover {
+        color: #fff;
+      }
+
       input {
         height: 5vh;
         width: 100%;
@@ -565,7 +599,6 @@
         display: grid;
         grid-template-columns: auto auto;
         column-gap: 5%;
-        // background-color: #2d2d2d;
         input {
           display: flex;
           // width: 20vw;
@@ -577,7 +610,7 @@
 }
 
 .FormContainer2 {
-  height: 65vh;
+  height: 100%;
   padding-top: 25vh;
   width: 100vw;
   display: flex;
@@ -605,6 +638,7 @@
     display: flex;
     padding-bottom: 10vh;
     justify-content: center;
+
     form {
       width: 80%;
       display: flex;
@@ -612,6 +646,10 @@
       column-gap: 5%;
       label {
         width: 100%;
+        -webkit-file-upload-button {
+          // display: flex;
+          // color: #000000;
+        }
       }
 
       input {

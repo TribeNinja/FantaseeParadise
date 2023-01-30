@@ -63,7 +63,12 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 5%;
-
+  p {
+    a {
+      color: #cd9706;
+      cursor: pointer;
+    }
+  }
   @media screen and (max-width: 900px) {
     justify-content: space-between;
   }

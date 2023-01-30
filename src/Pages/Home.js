@@ -77,7 +77,16 @@ function Home() {
               </div>
               <p>
                 {T(
-                  "Fantasee Paradise will help you live all your fantasies. We are here to deliver your wildest dreams and help you make money while you live your best life. We have a collection of the most exotic models with a very loyal fan base. We pride ourselves in empowering models across the world to achieve their dreams via our platform. Our mission is to help you grow, while bringing all your fantasies to life! Our Management team is rated one of the best in the industry and we are here to not only help you build your brand as a top model, but also build your business so you can grow and bring other fantasies to life. We have a great team of individuals to guide you through the challenges of opening or studio or being a top rated model. Contact us so we can help turn your wildest fantasies into a reality!"
+                  "Fantasee Paradise will help you live all your fantasies. We are here to deliver your wildest dreams and help you make money while you live your best life. We have a collection of the most exotic models with a very loyal fan base. We pride ourselves in empowering models across the world to achieve their dreams via our platform. Our mission is to help you grow, while bringing all your fantasies to life! Our Management team is rated one of the best in the industry and we are here to not only help you build your brand as a top model, but also build your business so you can grow and bring other fantasies to life. We have a great team of individuals to guide you through the challenges of opening a studio or being a top rated model. "
+                )}
+                <a
+                  href="mailto: zulkerb9b@gmail.com"
+                  style={{ color: "#cd9706" }}
+                >
+                  Contact us
+                </a>
+                {T(
+                  " so we can help turn your wildest fantasies into a reality!"
                 )}
               </p>
             </div>
@@ -109,7 +118,7 @@ function Home() {
               data-aos-anchor-placement="center-bottom"
               data-aos-delay="50"
             >
-              <h1>{T("Total Model Management")}</h1>
+              <h1>{T("Complete Model Management")}</h1>
               <p>
                 {T(
                   "Are you a model who needs management. Whether you work remotely or would like to work at one of our studios, we provide a complete setup, photoshoots, education, and promotions. We manage OnlyFans, Webcams, Influencers, and Reality Stars."

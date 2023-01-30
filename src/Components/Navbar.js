@@ -91,7 +91,9 @@ const Navbar = () => {
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
-                <h1>{T("Contact")}</h1>
+                <h1>
+                  <a href="mailto:zulkerb9b@gmail.com">{T("Contact")}</a>
+                </h1>
               </li>
             </ul>
           </div>

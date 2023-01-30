@@ -44,6 +44,12 @@ const IndividualProfile = (props) => {
             Sex:
           </h1>
           <h1 data-aos="flip-up" data-aos-delay="150">
+            Model Schedule:
+          </h1>
+          <h1 data-aos="flip-up" data-aos-delay="150">
+            Website:
+          </h1>
+          <h1 data-aos="flip-up" data-aos-delay="150">
             Description:
           </h1>
         </div>
