@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import React from "react";
 import "./components.scss";
+import { Link } from "react-router-dom";
 const Forms = () => {
   const formList = [
     {
@@ -17,13 +18,9 @@ const Forms = () => {
           {formList.map((item, index) => {
             return (
               <>
-                <a
-                  href={item.link}
-                  style={{ textDecoration: "none" }}
-                  target="_blank"
-                >
+                <Link to={item.link} style={{ textDecoration: "none" }}>
                   <h1 key={index}>{item.title}</h1>
-                </a>
+                </Link>
               </>
             );
           })}

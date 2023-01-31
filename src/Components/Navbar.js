@@ -15,9 +15,9 @@ const Navbar = () => {
       <div className="navbarContainer">
         <div className="menu">
           <ul>
-            <a href="/apply-now" target="_blank">
+            <Link to="/apply-now">
               <li onClick={() => setRefreshArray()}>{T("Apply Here")}</li>
-            </a>
+            </Link>
             <Link to="/gallery">
               <li onClick={() => setRefreshArray()}>{T("Gallery")}</li>
             </Link>

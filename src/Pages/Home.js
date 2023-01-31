@@ -50,14 +50,13 @@ function Home() {
 
   const [showPopUp, setPopUp] = useState(true);
   const [minor, setMinor] = useState(false);
-
   useEffect(() => {
-    const pop_status = localStorage.getItem("pop_status");
-    if (!pop_status) {
-      setPopUp(true);
-      localStorage.setItem("pop_status", "true");
-    }
+    const data = window.localStorage.getItem("MY_APP_STATE");
+    if (data !== null) setPopUp(JSON.parse(data));
   }, []);
+  useEffect(() => {
+    window.localStorage.setItem("MY_APP_STATE", JSON.stringify(showPopUp));
+  }, [showPopUp]);
 
   return (
     <>
