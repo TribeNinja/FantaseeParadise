@@ -38,16 +38,22 @@ const IndividualProfile = (props) => {
         <div className="textContainer">
           <h1 data-aos="flip-up">Name: {props.name}</h1>
           <h1 data-aos="flip-up" data-aos-delay="50">
-            Age:
+            Age: {props.age}
           </h1>
           <h1 data-aos="flip-up" data-aos-delay="100">
-            Sex:
+            Sex: {props.sex}
           </h1>
           <h1 data-aos="flip-up" data-aos-delay="150">
             Model Schedule:
           </h1>
           <h1 data-aos="flip-up" data-aos-delay="150">
-            Website:
+            Website:{" "}
+            <a
+              href={props.link}
+              style={{ textDecoration: "none", color: "#cd9706" }}
+            >
+              {props.link}
+            </a>
           </h1>
           <h1 data-aos="flip-up" data-aos-delay="150">
             Description:

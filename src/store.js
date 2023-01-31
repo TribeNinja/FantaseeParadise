@@ -9,6 +9,9 @@ class Store {
   showImageArray = [];
   popUp = null;
   clicked = false;
+  showAge = null;
+  showSex = null;
+  showLink = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -32,6 +35,15 @@ class Store {
 
   setShowName = (showName) => {
     this.showName = showName;
+  };
+  setShowAge = (showAge) => {
+    this.showAge = showAge;
+  };
+  setShowSex = (showSex) => {
+    this.showSex = showSex;
+  };
+  setShowLink = (showLink) => {
+    this.showLink = showLink;
   };
 
   setShowImageArray = (imageArray) => {

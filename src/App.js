@@ -20,13 +20,22 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const store = useContext(Store);
-  const { showProfile, showImage, showName, showImageArray, clicked } = store;
+  const {
+    showProfile,
+    showImage,
+    showName,
+    showImageArray,
+    showSex,
+    showAge,
+    showLink,
+    clicked,
+  } = store;
 
   useEffect(() => {
     AOS.init();
     sanityClient
       .fetch(
-        `*[_type == "models"]{slug,image{asset->{_id,url}}},imageArray[]{asset->{_id,url}}`
+        `*[_type == "models"]{slug,image{asset->{_id,url}}},imageArray[]{asset->{_id,url},age,sex,link}`
       )
       .then((data) => data)
       .catch(console.error);
@@ -69,6 +78,9 @@ const App = () => {
                 data={showImage}
                 name={showName}
                 imageArray={showImageArray}
+                sex={showSex}
+                age={showAge}
+                link={showLink}
               />
             }
           />

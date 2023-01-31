@@ -27,6 +27,9 @@ const Gallery = () => {
     setShowImage,
     setShowImageArray,
     setShowName,
+    setShowAge,
+    setShowSex,
+    setShowLink,
     setRefreshArray,
   } = store;
 
@@ -38,7 +41,7 @@ const Gallery = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "models"]{name,slug,image{asset->{_id,url}},imageArray[]{asset->{_id,url}}}`
+        `*[_type == "models"]{name,slug,image{asset->{_id,url}},imageArray[]{asset->{_id,url}},age,sex,link}`
       )
       .then((data) => setPostData(data))
       .catch(console.error);
@@ -101,6 +104,9 @@ const Gallery = () => {
                     setShowProfile(models.slug.current);
                     setShowImage(models.image.asset.url);
                     setShowName(models.name);
+                    setShowSex(models.sex);
+                    setShowAge(models.age);
+                    setShowLink(models.link);
                     models.imageArray !== undefined &&
                       models.imageArray.map((item, idx) => {
                         setRefreshArray();
