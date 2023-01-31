@@ -16,8 +16,8 @@ function TranslatorApplication() {
 }
 
 const Application = () => {
-  const [minDate, setMinDate] = useState();
   // Auto Handle Age
+  const [minDate, setMinDate] = useState();
   const handleChange_age = (event) => {
     console.log("DOB:", event.target.value);
     var age_latest = { age_latest: calculate_age(event.target.value) };

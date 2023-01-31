@@ -2,7 +2,9 @@ import React from "react";
 import { AiFillInstagram, AiFillMail } from "react-icons/ai";
 import logo from "../Assets/paradise_white.png";
 import { HashLink } from "react-router-hash-link";
+import { toast } from "react-toastify";
 const Footer = () => {
+  const mailnotify = () => toast("Email Copied to clipboard !");
   return (
     <div className="footerContainer">
       <div className="items borderItem">
@@ -35,6 +37,10 @@ const Footer = () => {
               <a
                 href="mailto: fantaseeparadise@gmail.com"
                 style={{ textDecoration: "none", color: "#cd9706" }}
+                onClick={() => {
+                  mailnotify();
+                  navigator.clipboard.writeText(this.state.textToCopy);
+                }}
               >
                 Contact
               </a>

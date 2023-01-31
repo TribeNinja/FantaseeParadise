@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import "./components.scss";
 import { LanguageList, Config } from "react-translator-component";
+import { toast } from "react-toastify";
 
 const Topbar = () => {
   const [lang, setLang] = useState(Config);
+  const mailnotify = () => toast("Email Copied to clipboard !");
   return (
     <div className="topbarContainer">
       <p>
-        <a href="mailto: fantaseeparadise@gmail.com">Contact</a>
+        <a
+          onClick={() => {
+            mailnotify();
+            navigator.clipboard.writeText(this.state.textToCopy);
+          }}
+          href="mailto: fantaseeparadise@gmail.com"
+        >
+          Contact
+        </a>
       </p>
       <div className="language">
         <LanguageList Language={lang} />
