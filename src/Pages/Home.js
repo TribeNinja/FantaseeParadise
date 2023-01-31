@@ -48,24 +48,57 @@ function Home() {
     window.scroll(imageControl);
   }, [modelManage]);
 
+  const [showPopUp, setPopUp] = useState(true);
+  const [minor, setMinor] = useState(false);
+
+  useEffect(() => {
+    const pop_status = localStorage.getItem("pop_status");
+    if (!pop_status) {
+      setPopUp(true);
+      localStorage.setItem("pop_status", "true");
+    }
+  }, []);
+
   return (
     <>
+      {minor && (
+        <div className="minorContainer">
+          <h1>You need to be above 18 years to enter.</h1>
+        </div>
+      )}
+      {showPopUp && (
+        <div className={"popUpContainer"}>
+          <div className="popUp">
+            <h1>Are you 18 years or above?</h1>
+            <div>
+              <h3
+                onClick={() => {
+                  setPopUp(false);
+                }}
+              >
+                Yes
+              </h3>
+              <h3
+                onClick={() => {
+                  setMinor(true);
+                  setPopUp(false);
+                }}
+              >
+                No
+              </h3>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="MainContainer">
-        <section
-          className="section0"
-          // style={{
-          //   backgroundImage: `url(${
-          //     process.env.PUBLIC_URL + "/Assets/section1.jpg"
-          //   })`,
-          // }}
-        >
+        <section className="section0">
           {/* Section 1 */}
           <section className="section1">
             <p data-aos="zoom-in">{T("See your FantaSees come to life")}</p>
           </section>
 
           {/* Section 2 */}
-          <section className="section2">
+          <section className="section2" id="about">
             <div
               className="textContainer"
               data-aos="fade-up"
@@ -80,7 +113,7 @@ function Home() {
                   "Fantasee Paradise will help you live all your fantasies. We are here to deliver your wildest dreams and help you make money while you live your best life. We have a collection of the most exotic models with a very loyal fan base. We pride ourselves in empowering models across the world to achieve their dreams via our platform. Our mission is to help you grow, while bringing all your fantasies to life! Our Management team is rated one of the best in the industry and we are here to not only help you build your brand as a top model, but also build your business so you can grow and bring other fantasies to life. We have a great team of individuals to guide you through the challenges of opening a studio or being a top rated model. "
                 )}
                 <a
-                  href="mailto: zulkerb9b@gmail.com"
+                  href="mailto: Fantaseeparadise@gmail.com"
                   style={{ color: "#cd9706" }}
                 >
                   Contact us

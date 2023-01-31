@@ -7,7 +7,7 @@ const Topbar = () => {
   return (
     <div className="topbarContainer">
       <p>
-        <a href="mailto: zulkerb9b@gmail.com">Contact</a>
+        <a href="mailto: fantaseeparadise@gmail.com">Contact</a>
       </p>
       <div className="language">
         <LanguageList Language={lang} />

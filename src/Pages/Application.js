@@ -1,11 +1,10 @@
 import { observer } from "mobx-react-lite";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../Components/Footer";
 import "./Pages.scss";
 import { Translator, T } from "react-translator-component";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function TranslatorApplication() {
@@ -17,9 +16,30 @@ function TranslatorApplication() {
 }
 
 const Application = () => {
+  const [minDate, setMinDate] = useState();
+  // Auto Handle Age
+  const handleChange_age = (event) => {
+    console.log("DOB:", event.target.value);
+    var age_latest = { age_latest: calculate_age(event.target.value) };
+    console.log(age_latest);
+  };
+  const calculate_age = (dob1) => {
+    var today = new Date();
+    var birthDate = new Date(dob1); // create a date object directly from `dob1` argument
+    var age_now = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age_now--;
+    }
+    setMinDate(age_now);
+    return age_now;
+  };
+
   const navigate = useNavigate();
   const notify = () => toast("Form Submitted !");
+  const notifyminors = () => toast("You must be above 18 years old to submit.");
   const form = useRef();
+
   const sendEmail = (e) => {
     emailjs
       .sendForm(
@@ -41,6 +61,7 @@ const Application = () => {
     notify();
     navigate("/");
   };
+
   return (
     <>
       <div className="FormContainer">
@@ -48,20 +69,26 @@ const Application = () => {
           <h1>{T("Application Form")}</h1>
         </div>
         <div className="formContents">
-          <form ref={form} onSubmit={sendEmail}>
-            <label>
+          <form ref={form} onSubmit={minDate > 17 ? sendEmail : notifyminors()}>
+            <label className="zIndex">
               <p>Name</p>
               <input type="text" name="name" required />
             </label>
-            <label>
+            <label className="zIndex">
               <p>City/State</p>
               <input type="text" name="state" required maxLength={2} />
             </label>
             <label>
               <p>Date of Birth</p>
-              <input type="date" color="#c5c5c5" name="dob" required />
+              <input
+                onChange={handleChange_age}
+                type="date"
+                color="#c5c5c5"
+                name="dob"
+                required
+              />
             </label>
-            <div>
+            <div className="zIndex">
               <p>Sex</p>
               <div className="sex" aria-required>
                 <label className="radioContainer">
@@ -78,17 +105,19 @@ const Application = () => {
                 </label>
               </div>
             </div>
-            <label>
+            <label className="zIndex">
               <p>Phone Number</p>
               <input type="tel" name="tel" required />
             </label>
-            <label>
+            <label className="zIndex">
               <p>Email</p>
               <input type="email" name="email" required />
             </label>
             <label>
               <p>Images</p>
-              <input type="file" name="file" />
+              <div className="imageUpload">
+                <input type="file" name="file" />
+              </div>
             </label>
             <label>
               <p>Comments</p>

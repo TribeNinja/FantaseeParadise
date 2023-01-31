@@ -51,6 +51,7 @@ const App = () => {
         draggable
         pauseOnHover
         theme="dark"
+        toastStyle={{ color: "#cd9706" }}
       />
       <Topbar />
       <Navbar />

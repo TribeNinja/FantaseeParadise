@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillInstagram, AiFillMail } from "react-icons/ai";
 import logo from "../Assets/paradise_white.png";
+import { HashLink } from "react-router-hash-link";
 const Footer = () => {
   return (
     <div className="footerContainer">
@@ -11,13 +12,33 @@ const Footer = () => {
       </div>
       <div className="items">
         <div className="social">
-          <AiFillInstagram size={30} color="#cd9706" />
-          <AiFillMail size={30} color="#cd9706" />
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.instagram.com/fantaseeparadise/"
+          >
+            <AiFillInstagram size={30} color="#cd9706" />
+          </a>
+          <a
+            href="mailto: fantaseeparadise@gmail.com"
+            style={{ textDecoration: "none", color: "#cd9706" }}
+          >
+            <AiFillMail size={30} color="#cd9706" />
+          </a>
           <div>
-            <h4>About us</h4>
+            <HashLink to="/#about" smooth style={{ textDecoration: "none" }}>
+              <h4>About us</h4>
+            </HashLink>
           </div>
           <div>
-            <h4>Contact</h4>
+            <h4>
+              <a
+                href="mailto: fantaseeparadise@gmail.com"
+                style={{ textDecoration: "none", color: "#cd9706" }}
+              >
+                Contact
+              </a>
+            </h4>
           </div>
         </div>
       </div>
