@@ -11,8 +11,9 @@ const Topbar = () => {
       <p>
         <a
           onClick={(e) => {
+            e.preventDefault();
             mailnotify();
-            navigator.clipboard.writeText("text/plain", "Hello, world!");
+            navigator.clipboard.writeText("fantaseeparadise@gmail.com");
           }}
           href="mailto: fantaseeparadise@gmail.com"
         >

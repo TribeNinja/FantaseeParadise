@@ -22,6 +22,10 @@ const Footer = () => {
             <AiFillInstagram size={30} color="#cd9706" />
           </a>
           <a
+            onClick={(e) => {
+              e.preventDefault();
+              navigator.clipboard.writeText("fantaseeparadise@gmail.com");
+            }}
             href="mailto: fantaseeparadise@gmail.com"
             style={{ textDecoration: "none", color: "#cd9706" }}
           >
@@ -37,9 +41,10 @@ const Footer = () => {
               <a
                 href="mailto: fantaseeparadise@gmail.com"
                 style={{ textDecoration: "none", color: "#cd9706" }}
-                onClick={() => {
+                onClick={(e) => {
                   mailnotify();
-                  navigator.clipboard.writeText(this.state.textToCopy);
+                  e.preventDefault();
+                  navigator.clipboard.writeText("fantaseeparadise@gmail.com");
                 }}
               >
                 Contact

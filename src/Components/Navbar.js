@@ -92,7 +92,17 @@ const Navbar = () => {
                 data-aos-delay="200"
               >
                 <h1>
-                  <a href="mailto:zulkerb9b@gmail.com">{T("Contact")}</a>
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigator.clipboard.writeText(
+                        "fantaseeparadise@gmail.com"
+                      );
+                    }}
+                    href="mailto:fantaseeparadise@gmail.com"
+                  >
+                    {T("Contact")}
+                  </a>
                 </h1>
               </li>
             </ul>
