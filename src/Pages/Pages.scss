@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 .section0 {
   // background-position-x: 40%;
   // background-position-y: top;
@@ -28,19 +29,18 @@
   font-size: 1.5rem;
   overflow: hidden;
   p {
-    width: 100%;
+    width: 50%;
     height: 60vh;
     font-size: 4em;
     font-weight: 700;
     text-align: center;
     background-image: linear-gradient(
-      to right,
-      #a17704,
-      #a17704,
+      to bottom,
       #bc8d00,
       #bc8d00,
-      #a17704,
-      #856401
+      #bc8d00,
+      #bc8d00,
+      #bc8d00
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

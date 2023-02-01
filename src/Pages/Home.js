@@ -97,7 +97,7 @@ function Home() {
         <section className="section0">
           {/* Section 1 */}
           <section className="section1">
-            <p data-aos="zoom-in">{T("See your FantaSees come to life")}</p>
+            <p data-aos="zoom-in">{T("See your Fantasees come to life")}</p>
           </section>
 
           {/* Section 2 */}
