@@ -11,7 +11,7 @@
   justify-content: space-between;
   box-shadow: 2px 2px solid black;
   color: #c5c5c5;
-  z-index: 22;
+  z-index: 31;
   @media screen and (max-width: 900px) {
     margin-top: 0;
   }
@@ -54,7 +54,7 @@
 // TopBar
 .topbarContainer {
   background-color: #000;
-  z-index: 22;
+  z-index: 31;
   color: #cd9706;
   height: 5vh;
   width: 90vw;

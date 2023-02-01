@@ -21,7 +21,8 @@ const Application = () => {
   const handleChange_age = (event) => {
     console.log("DOB:", event.target.value);
     var age_latest = { age_latest: calculate_age(event.target.value) };
-    console.log(age_latest);
+    setMinDate(age_latest);
+    console.log(minDate);
   };
   const calculate_age = (dob1) => {
     var today = new Date();
@@ -31,7 +32,6 @@ const Application = () => {
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
       age_now--;
     }
-    setMinDate(age_now);
     return age_now;
   };
 

@@ -10,9 +10,9 @@ const Topbar = () => {
     <div className="topbarContainer">
       <p>
         <a
-          onClick={() => {
+          onClick={(e) => {
             mailnotify();
-            navigator.clipboard.writeText(this.state.textToCopy);
+            navigator.clipboard.writeText("text/plain", "Hello, world!");
           }}
           href="mailto: fantaseeparadise@gmail.com"
         >
