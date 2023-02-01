@@ -113,12 +113,12 @@ const Application = () => {
               <p>Email</p>
               <input type="email" name="email" required />
             </label>
-            <label>
+            {/* <label>
               <p>Images</p>
               <div className="imageUpload">
                 <input type="file" name="file" />
               </div>
-            </label>
+            </label> */}
             <label>
               <p>Comments</p>
               <input type="text" name="comments" />
