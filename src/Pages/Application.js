@@ -1,11 +1,12 @@
 import { observer } from "mobx-react-lite";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Footer from "../Components/Footer";
 import "./Pages.scss";
 import { Translator, T } from "react-translator-component";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import sanityClient from "../Components/Client";
 
 function TranslatorApplication() {
   return (
@@ -61,7 +62,28 @@ const Application = () => {
     notify();
     navigate("/");
   };
+  useEffect(() => {
+    if (minDate < 17) {
+      notifyminors();
+    }
+  }, [minDate]);
 
+  const [data, setData] = useState();
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == "applications"]{imageApplication}`)
+      .then((data) => setData(data))
+      .catch(console.error);
+  }, []);
+
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0];
+    const asset = await sanityClient.assets.upload("image", file, {
+      filename: file.name,
+      extension: file.name.split(".").pop(),
+    });
+    console.log("Uploaded image asset: ", asset);
+  };
   return (
     <>
       <div className="FormContainer">
@@ -69,7 +91,7 @@ const Application = () => {
           <h1>{T("Application Form")}</h1>
         </div>
         <div className="formContents">
-          <form ref={form} onSubmit={minDate > 17 ? sendEmail : notifyminors()}>
+          <form ref={form} onSubmit={minDate > 17 && sendEmail}>
             <label className="zIndex">
               <p>Name</p>
               <input type="text" name="name" required />
@@ -113,12 +135,12 @@ const Application = () => {
               <p>Email</p>
               <input type="email" name="email" required />
             </label>
-            {/* <label>
+            <label>
               <p>Images</p>
               <div className="imageUpload">
-                <input type="file" name="file" />
+                <input type="file" name="file" onClick={handleImageUpload} />
               </div>
-            </label> */}
+            </label>
             <label>
               <p>Comments</p>
               <input type="text" name="comments" />

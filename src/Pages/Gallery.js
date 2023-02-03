@@ -60,7 +60,11 @@ const Gallery = () => {
               The
             </h1>
             <h1
-              style={{ color: "#82560c", backgroundColor: "#0d0d0d" }}
+              style={{
+                color: "#82560c",
+                backgroundColor: "#0d0d0d",
+                width: "100vw",
+              }}
               data-aos="zoom-in"
               data-aos-delay="150"
             >

@@ -40,6 +40,9 @@ const Navbar = () => {
                 }}
                 data-aos="zoom-out-left"
               ></div>
+              <li>
+                <img src={logo} />
+              </li>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <li
                   onClick={() => {
@@ -51,11 +54,7 @@ const Navbar = () => {
                   <h1>{T("Home")}</h1>
                 </li>
               </Link>
-              <a
-                href="/apply-now"
-                target="_blank"
-                style={{ textDecoration: "none" }}
-              >
+              <Link to="/apply-now" style={{ textDecoration: "none" }}>
                 <li
                   onClick={() => {
                     setRefreshArray();
@@ -66,7 +65,7 @@ const Navbar = () => {
                 >
                   <h1>{T("Apply Here")}</h1>
                 </li>
-              </a>
+              </Link>
               <Link to="/gallery" style={{ textDecoration: "none" }}>
                 <li
                   onClick={() => {
@@ -100,6 +99,7 @@ const Navbar = () => {
                       );
                     }}
                     href="mailto:fantaseeparadise@gmail.com"
+                    style={{ textDecoration: "none", color: "#8c6700" }}
                   >
                     {T("Contact")}
                   </a>
