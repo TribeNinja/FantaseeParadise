@@ -172,7 +172,7 @@ function Home() {
                 }}
               >
                 {modelManage
-                  ? T("Choose a relevant form to your right or click again.")
+                  ? T("Choose relevant form or click again.")
                   : T("Join us to live your FantaSee life")}
               </p>
             </div>

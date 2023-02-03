@@ -62,11 +62,6 @@ const Application = () => {
     notify();
     navigate("/");
   };
-  useEffect(() => {
-    if (minDate < 17) {
-      notifyminors();
-    }
-  }, [minDate]);
 
   const [data, setData] = useState();
   useEffect(() => {
@@ -91,7 +86,7 @@ const Application = () => {
           <h1>{T("Application Form")}</h1>
         </div>
         <div className="formContents">
-          <form ref={form} onSubmit={minDate > 17 && sendEmail}>
+          <form ref={form} onSubmit={minDate > 17 ? sendEmail : notifyminors()}>
             <label className="zIndex">
               <p>Name</p>
               <input type="text" name="name" required />

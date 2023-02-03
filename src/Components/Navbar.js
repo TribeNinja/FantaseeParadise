@@ -5,10 +5,12 @@ import "./components.scss";
 import { T, Translator } from "react-translator-component";
 import { Link } from "react-router-dom";
 import Store from "../store";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const store = useContext(Store);
   const { drawer, setDrawer, setFalse, setRefreshArray } = store;
+  const mailnotify = () => toast("Email Copied to clipboard !");
 
   return (
     <Translator>
@@ -41,7 +43,7 @@ const Navbar = () => {
                 data-aos="zoom-out-left"
               ></div>
               <li>
-                <img src={logo} />
+                <img src={logo} data-aos="zoom-in" />
               </li>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <li
@@ -94,6 +96,7 @@ const Navbar = () => {
                   <a
                     onClick={(e) => {
                       e.preventDefault();
+                      mailnotify();
                       navigator.clipboard.writeText(
                         "fantaseeparadise@gmail.com"
                       );
