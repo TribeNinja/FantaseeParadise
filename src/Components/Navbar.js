@@ -43,7 +43,7 @@ const Navbar = () => {
                 data-aos="zoom-out-left"
               ></div>
               <li>
-                <img src={logo} data-aos="zoom-in" />
+                <img src={logo} data-aos="zoom-in" alt="logo" />
               </li>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <li
