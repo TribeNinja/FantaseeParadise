@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="footerContainer">
       <div className="items borderItem">
         <div className="social">
-          <img src={logo} alt={""} />
+          <img src={logo} alt={""} height="100%" width="50%" />
         </div>
       </div>
       <div className="items">

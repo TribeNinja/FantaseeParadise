@@ -25,7 +25,7 @@ const Navbar = () => {
             </Link>
             <Link to="/">
               <li onClick={() => setRefreshArray()}>
-                <img src={logo} alt={""} />
+                <img src={logo} alt={"logo"} width="15vw" height="100%" />
               </li>
             </Link>
             <li>Fantasee Party</li>
