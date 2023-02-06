@@ -102,11 +102,7 @@ function Home() {
 
           {/* Section 2 */}
           <section className="section2" id="about">
-            <div
-              className="textContainer"
-              data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom"
-            >
+            <div className="textContainer" data-aos="fade-up">
               <div className="title">
                 <h2>{T("About Us")}</h2>
                 <div className="line"></div>
@@ -132,9 +128,7 @@ function Home() {
               </p>
             </div>
             <video
-              data-aos="fade-left"
-              data-aos-anchor-placement="bottom-bottom"
-              data-aos-delay="50"
+              data-aos="fade-up"
               className="video"
               src={process.env.PUBLIC_URL + "/Assets/homeVideo.mp4"}
               muted
@@ -153,12 +147,7 @@ function Home() {
           }}
         >
           <div className="section3Wrapper">
-            <div
-              className="writing"
-              data-aos="fade-right"
-              data-aos-anchor-placement="center-bottom"
-              data-aos-delay="50"
-            >
+            <div className="writing" data-aos="fade-right">
               <h1>{T("Complete Model Management")}</h1>
               <p>
                 {T(
@@ -186,22 +175,10 @@ function Home() {
               process.env.PUBLIC_URL + "/Assets/fparty.png"
             })`,
           }}
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
         >
           <div class="comingSoon">
-            <b
-              data-aos="fade-down"
-              data-aos-anchor-placement="bottom-bottom"
-              data-aos-delay="50"
-            >
-              <span>Where</span>-FantaSee-<span>becomes</span>-reality
-            </b>
-            <p
-              data-aos="fade-down"
-              data-aos-anchor-placement="bottom-bottom"
-              data-aos-delay="100"
-            >
+            <b data-aos="fade-down">Where FantaSee becomes reality</b>
+            <p data-aos="fade-down" data-aos-delay="50">
               Coming Soon
             </p>
           </div>

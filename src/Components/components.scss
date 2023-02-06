@@ -259,6 +259,7 @@ body {
 
   @media screen and (max-width: 1224px) {
     margin-top: -5vh;
+    height: 50vh;
     z-index: 1;
   }
   .canvas {
@@ -269,6 +270,10 @@ body {
     overflow: hidden;
     height: 80%;
     width: 100%;
+    @media screen and (max-width: 1224px) {
+      height: 30%;
+      width: 100%;
+    }
   }
 }
 
