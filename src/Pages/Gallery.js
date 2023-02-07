@@ -17,6 +17,7 @@ const ShowMore = (props) => {
     </>
   );
 };
+
 const Gallery = () => {
   // Store
   const store = useContext(Store);
@@ -37,11 +38,15 @@ const Gallery = () => {
 
   // Sanity Connection
   const [postData, setPostData] = useState(null);
+  const [galleryBg, setGalleryBg] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "models"]{name,slug,image{asset->{_id,url}},imageArray[]{asset->{_id,url}},age,sex,link}`
+        `{
+          "models": *[_type == "models"]{name,slug,image{asset->{_id,url}},imageArray[]{asset->{_id,url}},age,sex,link},
+          "bg": *[_type == "homegallery"]{name,image{asset->{_id,url}}}
+      }`
       )
       .then((data) => setPostData(data))
       .catch(console.error);
@@ -49,95 +54,102 @@ const Gallery = () => {
 
   return (
     <div className="galleryContainer">
-      <div className="topSection">
-        <div className="textAndImageContainer">
-          <div className="bannerText">
-            <h1 data-aos="zoom-in">Welcome</h1>
-            <h1 data-aos="zoom-in" data-aos-delay="50">
-              To
-            </h1>
-            <h1 data-aos="zoom-in" data-aos-delay="100">
-              The
-            </h1>
-            <h1
-              style={{
-                color: "#82560c",
-                backgroundColor: "#0d0d0d",
-                width: "100vw",
-              }}
-              data-aos="zoom-in"
-              data-aos-delay="150"
-            >
-              Exotic
-            </h1>
-            <h1 data-aos="zoom-in" data-aos-delay="200">
-              Gallery
-            </h1>
-          </div>
-          <div className="imageContainer">
-            <img
-              src={process.env.PUBLIC_URL + "/Assets/GalleryBanner.png"}
-              alt="Banner"
-            />
-          </div>
-        </div>
-        <div className="heroText">
-          <p>
-            <span data-aos="zoom-in" data-aos-delay="250">
-              Get ready to be swept off your feet and transported to a world of
-              exotic pleasure – meet our models today!
-            </span>
-          </p>
-        </div>
-      </div>
-      <div className="bottomSection">
-        <div className="modelContainer" data-aos="fade-in">
-          {postData &&
-            postData.map((models, index) => {
-              return (
-                <div
-                  className="imgContainer"
-                  key={index}
-                  onMouseEnter={() => {
-                    setShowMore(index);
+      {postData && (
+        <>
+          <div className="topSection">
+            <div className="textAndImageContainer">
+              <div className="bannerText">
+                <h1 data-aos="zoom-in">Welcome</h1>
+                <h1 data-aos="zoom-in" data-aos-delay="50">
+                  To
+                </h1>
+                <h1 data-aos="zoom-in" data-aos-delay="100">
+                  The
+                </h1>
+                <h1
+                  style={{
+                    // color: "#82560c",
+                    width: "100vw",
                   }}
-                  onMouseLeave={() => {
-                    setShowMore(null);
-                  }}
-                  onClick={() => {
-                    setShowProfile(models.slug.current);
-                    setShowImage(models.image.asset.url);
-                    setShowName(models.name);
-                    setShowSex(models.sex);
-                    setShowAge(models.age);
-                    setShowLink(models.link);
-                    models.imageArray !== undefined &&
-                      models.imageArray.map((item, idx) => {
-                        setRefreshArray();
-                        return (
-                          <>
-                            {}
-                            {setShowImageArray([
-                              showImageArray.push(item.asset.url),
-                              ...showImageArray,
-                            ])}
-                          </>
-                        );
-                      });
-                  }}
+                  data-aos="zoom-in"
+                  data-aos-delay="150"
                 >
-                  <>
-                    <Link to={`/models/${models.slug.current}`}>
-                      <img src={models.image.asset.url} alt="models" />
-                      {showMore === index && <ShowMore name={models.name} />}
-                    </Link>
-                  </>
-                </div>
-              );
-            })}
-        </div>
-      </div>
-      <Footer />
+                  Exotic
+                </h1>
+                <h1 data-aos="zoom-in" data-aos-delay="200">
+                  Gallery
+                </h1>
+              </div>
+              <div className="imageContainer">
+                <img
+                  src={postData.bg[0].image.asset.url}
+                  // src={postData.homegallery.image.asset.url}
+                  alt="Banner"
+                  data-aos="fade-right"
+                />
+              </div>
+            </div>
+            <div className="heroText">
+              <p>
+                <span data-aos="zoom-in" data-aos-delay="250">
+                  Get ready to be swept off your feet and transported to a world
+                  of exotic pleasure – meet our models today!
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="bottomSection">
+            <div className="modelContainer" data-aos="fade-in">
+              {postData &&
+                postData.models.map((models, index) => {
+                  return (
+                    <div
+                      className="imgContainer"
+                      key={index}
+                      onMouseEnter={() => {
+                        setShowMore(index);
+                      }}
+                      onMouseLeave={() => {
+                        setShowMore(null);
+                      }}
+                      onClick={() => {
+                        setShowProfile(models.slug.current);
+                        setShowImage(models.image.asset.url);
+                        setShowName(models.name);
+                        setShowSex(models.sex);
+                        setShowAge(models.age);
+                        setShowLink(models.link);
+                        models.imageArray !== undefined &&
+                          models.imageArray.map((item, idx) => {
+                            setRefreshArray();
+                            return (
+                              <>
+                                {}
+                                {setShowImageArray([
+                                  showImageArray.push(item.asset.url),
+                                  ...showImageArray,
+                                ])}
+                              </>
+                            );
+                          });
+                      }}
+                    >
+                      <>
+                        <Link to={`/models/${models.slug.current}`}>
+                          <img src={models.image.asset.url} alt="models" />
+                          {showMore === index && (
+                            <ShowMore name={models.name} />
+                          )}
+                        </Link>
+                      </>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

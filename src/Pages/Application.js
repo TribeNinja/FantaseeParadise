@@ -64,12 +64,12 @@ const Application = () => {
   };
 
   const [data, setData] = useState();
-  useEffect(() => {
-    sanityClient
-      .fetch(`*[_type == "applications"]{imageApplication}`)
-      .then((data) => setData(data))
-      .catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //   sanityClient
+  //     .fetch(`*[_type == "applications"]{imageApplication}`)
+  //     .then((data) => setData(data))
+  //     .catch(console.error);
+  // }, []);
 
   const handleImageUpload = async (event) => {
     const file = event.target.files[0];

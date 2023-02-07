@@ -1,6 +1,7 @@
 import React from "react";
 import "./Pages.scss";
 import Footer from "../Components/Footer";
+
 const Release = () => {
   return (
     <>
