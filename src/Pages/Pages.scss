@@ -11,9 +11,7 @@
     background-position-x: 80%;
     background-size: 100%;
     background-position: bottom;
-    height: 250vh;
   }
-  // height: 200vh;
   position: relative;
   background-color: #000000c8;
 }
@@ -69,8 +67,8 @@
   }
 }
 .section2 {
-  // height: 100vh;
-  position: absolute;
+  height: 100vh;
+  // position: absolute;
   width: 95vw;
   overflow: hidden;
   display: flex;
@@ -78,6 +76,7 @@
   align-items: center;
   padding: 2.5%;
   @media screen and (max-width: 1224px) {
+    height: 100%;
     width: 100vw;
     padding: 0;
     flex-direction: column;
