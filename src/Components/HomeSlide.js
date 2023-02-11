@@ -35,31 +35,31 @@ const HomeSlide = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/1.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/1.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/2.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/2.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/3.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/3.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/4.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/4.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/5.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/5.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/6.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/6.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/7.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/7.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/8.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/8.webp"} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/9.jpg"} />
+            <img src={process.env.PUBLIC_URL + "/9.webp"} />
           </SwiperSlide>
         </Swiper>
       </>

@@ -86,6 +86,7 @@ const Gallery = () => {
                   // src={postData.homegallery.image.asset.url}
                   alt="Banner"
                   data-aos="fade-right"
+                  loading="lazy"
                 />
               </div>
             </div>
