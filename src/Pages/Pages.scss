@@ -167,7 +167,7 @@
     }
   }
   .section3Wrapper {
-    width: 90%;
+    width: 50%;
     height: 100%;
     display: flex;
     padding: 0 5%;
@@ -200,7 +200,7 @@
       justify-content: center;
       border-radius: 10px;
       font-weight: 700;
-      transition: scale 0.3s;
+      transition: background-color 0.3s;
       color: #c5c5c5;
       cursor: pointer;
       @media screen and (max-width: 1224px) {
@@ -212,7 +212,7 @@
       }
     }
     .section3Button:hover {
-      scale: 0.93;
+      background-color: #000;
     }
     p {
       font-size: 1em;

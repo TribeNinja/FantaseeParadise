@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Forms from "../Components/Forms";
 import Collage from "../Components/Collage";
 import { toast } from "react-toastify";
+import HomeSlide from "../Components/HomeSlide";
 Config.default = "en";
 
 Config.list = {
@@ -166,7 +167,7 @@ function Home() {
               </p>
             </div>
           </div>
-          {modelManage ? <Forms /> : <Collage clicked={modelManage} />}
+          {modelManage ? <Forms /> : <HomeSlide />}
         </section>
         <section
           className="section5"

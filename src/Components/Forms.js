@@ -11,7 +11,7 @@ const Forms = () => {
     { title: "Release Form", link: "release-form" },
   ];
   return (
-    <div className="formContainer">
+    <div className="formContainer" data-aos="fade-in">
       <div className="formWrapper">
         <h1>Forms</h1>
         <div className="formList">
