@@ -61,7 +61,7 @@ function Home() {
   }, []);
   useEffect(() => {
     window.localStorage.setItem("MY_APP_STATE", JSON.stringify(showPopUp));
-  }, [showPopUp]);
+  });
   //
   return (
     <>
