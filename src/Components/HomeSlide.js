@@ -35,31 +35,76 @@ const HomeSlide = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/1.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/1.webp"}
+              height="80%"
+              width="100%"
+              alt="img1"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/2.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/2.webp"}
+              height="80%"
+              width="100%"
+              alt="img2"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/3.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/3.webp"}
+              height="80%"
+              width="100%"
+              alt="img3"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/4.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/4.webp"}
+              height="80%"
+              width="100%"
+              alt="img4"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/5.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/5.webp"}
+              height="80%"
+              width="100%"
+              alt="img5"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/6.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/6.webp"}
+              height="80%"
+              width="100%"
+              alt="img6"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/7.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/7.webp"}
+              height="80%"
+              width="100%"
+              alt="img7"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/8.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/8.webp"}
+              height="80%"
+              width="100%"
+              alt="img8"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={process.env.PUBLIC_URL + "/9.webp"} />
+            <img
+              src={process.env.PUBLIC_URL + "/9.webp"}
+              height="80%"
+              width="100%"
+              alt="img9"
+            />
           </SwiperSlide>
         </Swiper>
       </>

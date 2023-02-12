@@ -395,7 +395,9 @@ body {
     background-image: none !important;
   }
   .swiper-slide img {
-    width: 100%;
     border-radius: 20px;
+    @media screen and (max-width: 1224px) {
+      height: 100%;
+    }
   }
 }
