@@ -358,16 +358,16 @@
 
           h1:nth-of-type(1) {
             font-size: 50px;
-            margin-top: 2vh;
+            margin-top: 1vh;
           }
           h1:nth-of-type(2) {
             font-size: 50px;
-            margin-top: 2vh;
+            margin-top: 1vh;
           }
           h1:nth-of-type(3) {
             z-index: 29;
             font-size: 50px;
-            margin-top: 2vh;
+            margin-top: 1vh;
           }
           h1:nth-of-type(4) {
             z-index: 31;
@@ -388,12 +388,7 @@
           margin: 0;
 
           @media screen and (max-width: 800px) {
-            font-size: 2.5rem;
             line-height: 50px;
-
-            h1:nth-of-type(5) {
-              z-index: 31;
-            }
           }
         }
       }
