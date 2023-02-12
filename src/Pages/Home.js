@@ -58,10 +58,10 @@ function Home() {
   useEffect(() => {
     const data = window.localStorage.getItem("MY_APP_STATE");
     if (data !== null) setPopUp(JSON.parse(data));
-  });
+  }, []);
   useEffect(() => {
     window.localStorage.setItem("MY_APP_STATE", JSON.stringify(showPopUp));
-  });
+  }, [showPopUp]);
   //
   return (
     <>
