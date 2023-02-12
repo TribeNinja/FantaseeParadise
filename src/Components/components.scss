@@ -362,6 +362,7 @@ body {
   @media screen and (max-width: 1224px) {
     width: 100%;
   }
+
   .swiper {
     width: 60vw;
     padding-top: 50px;
@@ -370,6 +371,9 @@ body {
       width: 100vw;
       padding-top: 50px;
       padding-bottom: 50px;
+    }
+    @media screen and (max-width: 800px) {
+      padding: 0;
     }
   }
   .swiper-pagination-bullet {

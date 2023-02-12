@@ -62,6 +62,9 @@
       padding: 0 10%;
       font-weight: 400;
     }
+    @media screen and (max-width: 800px) {
+      font-size: 3rem;
+    }
   }
 }
 .section2 {
@@ -128,7 +131,7 @@
     }
     p {
       color: #fcfcfc;
-      text-align: justify;
+      text-align: center;
       // background-color: #0d0d0db0;
       border-radius: 10px;
       font-size: 1em;
@@ -189,6 +192,9 @@
         }
         height: 80%;
         padding: 5%;
+        p {
+          text-align: left;
+        }
       }
     }
     .section3Button {
@@ -204,10 +210,11 @@
       color: #c5c5c5;
       cursor: pointer;
       @media screen and (max-width: 1224px) {
-        // width: 100%;
+        width: 90%;
         height: 10vh;
         color: #c5c5c5;
-        text-align-last: center;
+        font-size: 1.2em;
+        text-align: center !important;
         padding: 5%;
       }
     }
@@ -339,6 +346,9 @@
         h1:nth-of-type(4) {
           color: #bc8d00;
         }
+        h1:nth-of-type(1) {
+          margin-top: 30px;
+        }
         @media screen and (max-width: 1224px) {
           position: absolute;
           margin-top: 5vh;
@@ -350,7 +360,6 @@
           h1:nth-of-type(4) {
             z-index: 31;
             margin-top: 20vh;
-            background-color: #bc8d00b2;
             width: 100% !important;
           }
           h1:nth-of-type(5) {
@@ -365,6 +374,10 @@
           @media screen and (max-width: 1224px) {
             font-size: 4.5rem;
             // line-height: 50px;
+          }
+
+          @media screen and (max-width: 800px) {
+            font-size: 2.5rem;
           }
         }
       }
@@ -384,8 +397,13 @@
           margin-left: -15vh;
           margin-top: -15vh;
           @media screen and (max-width: 1224px) {
-            height: 60vh;
-            margin-left: -22vh;
+            // height: 60vh;
+            height: 100%;
+            margin-left: 0;
+            margin-top: 0;
+            width: 150vw;
+            // scale: 1.5;
+            margin-left: -10vh;
           }
         }
       }
@@ -935,9 +953,17 @@
     align-items: center;
     div {
       text-align: center;
+      h1 {
+        @media screen and (max-width: 1224px) {
+          font-size: 0.5em;
+        }
+      }
       h3 {
         cursor: pointer;
         transition: 0.3s scale;
+        @media screen and (max-width: 1224px) {
+          font-size: 0.5em;
+        }
       }
       h3:hover {
         scale: 1.1;

@@ -68,7 +68,6 @@ const Gallery = () => {
                 </h1>
                 <h1
                   style={{
-                    // color: "#82560c",
                     width: "100vw",
                   }}
                   data-aos="zoom-in"
