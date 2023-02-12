@@ -75,7 +75,7 @@ const HomeSlide = () => {
               alt="img9"
             />
           </SwiperSlide>
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <img
               src={process.env.PUBLIC_URL + "/2.webp"}
               height="80%"
@@ -122,7 +122,7 @@ const HomeSlide = () => {
               width="100%"
               alt="img7"
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
           <SwiperSlide>
             <img
               src={process.env.PUBLIC_URL + "/8.webp"}
@@ -131,14 +131,14 @@ const HomeSlide = () => {
               alt="img8"
             />
           </SwiperSlide>
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <img
               src={process.env.PUBLIC_URL + "/9.webp"}
               height="80%"
               width="100%"
               alt="img9"
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </>
     </div>
