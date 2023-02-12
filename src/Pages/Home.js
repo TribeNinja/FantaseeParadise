@@ -148,7 +148,7 @@ function Home() {
           }}
         >
           <div className="section3Wrapper">
-            <div className="writing" data-aos="fade-right">
+            <div className="writing" data-aos="fade-up">
               <h1>{T("Complete Model Management")}</h1>
               <p>
                 {T(
