@@ -3,7 +3,6 @@ import { Translator, T, Config } from "react-translator-component";
 import Footer from "../Components/Footer";
 import { useEffect, useState } from "react";
 import Forms from "../Components/Forms";
-import Collage from "../Components/Collage";
 import { toast } from "react-toastify";
 import HomeSlide from "../Components/HomeSlide";
 Config.default = "en";
