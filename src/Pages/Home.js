@@ -175,6 +175,7 @@ function Home() {
               process.env.PUBLIC_URL + "/Assets/fparty.png"
             })`,
           }}
+          id="section5"
         >
           <div class="comingSoon">
             <b data-aos="fade-down">Where FantaSee becomes reality</b>

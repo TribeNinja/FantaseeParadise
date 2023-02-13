@@ -6,6 +6,7 @@ import { T, Translator } from "react-translator-component";
 import { Link } from "react-router-dom";
 import Store from "../store";
 import { toast } from "react-toastify";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const store = useContext(Store);
@@ -28,7 +29,15 @@ const Navbar = () => {
                 <img src={logo} alt={"logo"} width="15vw" height="100%" />
               </li>
             </Link>
-            <li>Fantasee Party</li>
+            <li>
+              <HashLink
+                to="/#section5"
+                smooth
+                style={{ textDecoration: "none" }}
+              >
+                Fantasee Party
+              </HashLink>
+            </li>
             <li></li>
           </ul>
         </div>
@@ -81,8 +90,22 @@ const Navbar = () => {
                 </li>
               </Link>
 
-              <li data-aos="fade-right" data-aos-delay="150">
-                <h1>Fantasee Party</h1>
+              <li
+                data-aos="fade-right"
+                data-aos-delay="150"
+                onClick={() => {
+                  setFalse();
+                }}
+              >
+                <h1>
+                  <HashLink
+                    to="/#section5"
+                    smooth
+                    style={{ textDecoration: "none", color: "#8c6700" }}
+                  >
+                    Fantasee Party
+                  </HashLink>
+                </h1>
               </li>
               <li
                 onClick={() => {

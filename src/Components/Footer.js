@@ -23,6 +23,7 @@ const Footer = () => {
           </a>
           <a
             onClick={(e) => {
+              mailnotify();
               e.preventDefault();
               navigator.clipboard.writeText("fantaseeparadise@gmail.com");
             }}
@@ -36,27 +37,12 @@ const Footer = () => {
               <h4>About us</h4>
             </HashLink>
           </div>
-          <div>
-            <h4>
-              <a
-                href="mailto: fantaseeparadise@gmail.com"
-                style={{ textDecoration: "none", color: "#cd9706" }}
-                onClick={(e) => {
-                  mailnotify();
-                  e.preventDefault();
-                  navigator.clipboard.writeText("fantaseeparadise@gmail.com");
-                }}
-              >
-                Contact
-              </a>
-            </h4>
-          </div>
         </div>
       </div>
 
       <div className="items">
         <div className="social">
-          <p>© All rights reserved Fantasee Paradise 2022</p>
+          <p>© All rights reserved Fantasee Paradise 2023</p>
         </div>
       </div>
     </div>
