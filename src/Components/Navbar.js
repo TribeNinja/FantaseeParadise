@@ -24,11 +24,15 @@ const Navbar = () => {
             <Link to="/gallery">
               <li onClick={() => setRefreshArray()}>{T("Gallery")}</li>
             </Link>
-            <Link to="/">
+            <HashLink
+              to="/#section1"
+              smooth
+              style={{ textDecoration: "none", color: "#8c6700" }}
+            >
               <li onClick={() => setRefreshArray()}>
                 <img src={logo} alt={"logo"} width="15vw" height="100%" />
               </li>
-            </Link>
+            </HashLink>
             <li>
               <HashLink
                 to="/#section5"

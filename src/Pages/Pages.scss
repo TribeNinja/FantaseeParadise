@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 .section0 {
   // background-position-x: 40%;
   // background-position-y: top;
@@ -111,9 +112,11 @@
       @media screen and (max-width: 1224px) {
         padding: 0 5%;
       }
-      h2 {
+      h1 {
+        font-family: "Playfair Display", serif;
         font-size: 2em;
         margin: 0;
+        padding: 0 2.5%;
         font-weight: 600;
         color: #cd9706;
         @media screen and (max-width: 1224px) {
@@ -186,10 +189,12 @@
       width: 100%;
       h1 {
         color: #cd9706;
+        font-family: "Playfair Display", serif;
       }
       @media screen and (max-width: 1224px) {
         h1 {
           margin: 0;
+          font-family: "Playfair Display", serif;
           color: #cd9706;
           text-align: center;
         }
@@ -286,7 +291,8 @@
 
     p {
       margin: 0;
-      font: 400 5vh "transparent";
+      font-size: 5vh;
+      font-family: "Playfair Display", serif;
       color: #f59b00;
       text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #000, 0 0 0.5em #000,
         0 0 0.1em #000, 0 10px 3px #000;
@@ -335,8 +341,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: nowrap;
+      flex-direction: row-reverse;
       @media screen and (max-width: 1224px) {
         margin-top: 30vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
       }
       // height: 90%;
       .bannerText {
@@ -353,8 +366,11 @@
 
         @media screen and (max-width: 1224px) {
           position: absolute;
-          margin-top: 5vh;
+          margin-top: 36vh;
           width: 100%;
+          height: 100%;
+          z-index: 2;
+          font-family: "Playfair-Display", "serif";
 
           h1:nth-of-type(1) {
             font-size: 50px;
@@ -371,7 +387,7 @@
           }
           h1:nth-of-type(4) {
             z-index: 31;
-            margin-top: 20vh;
+            // margin-top: 20vh;
             width: 100% !important;
             font-size: 50px;
           }
@@ -386,6 +402,7 @@
           font-size: 5.5em;
           line-height: 100px;
           margin: 0;
+          font-family: "Playfair Display", serif;
 
           @media screen and (max-width: 800px) {
             line-height: 50px;
@@ -395,6 +412,7 @@
 
       .imageContainer {
         // margin-top: -10vh;
+        width: 50vw;
         @media screen and (max-width: 1224px) {
           position: absolute;
           overflow: hidden;
@@ -404,14 +422,16 @@
         }
         img {
           height: 100vh;
-          z-index: 33;
+          z-index: 1;
+          background: cover;
+
           margin-left: -15vh;
           margin-top: -15vh;
           @media screen and (max-width: 1224px) {
             // height: 60vh;
             height: 100%;
-            margin-left: 0;
-            margin-top: 0;
+            // margin-left: -15vh;
+            margin-top: 40vh;
             width: 150vw;
             // scale: 1.5;
             margin-left: -10vh;
@@ -421,6 +441,7 @@
     }
     .heroText {
       // margin-top: -15vh;
+      background: linear-gradient(to bottom, #0000008a, #1818188a, #0000008a);
       display: flex;
       justify-content: center;
       @media screen and (max-width: 1224px) {
@@ -510,6 +531,7 @@
         justify-content: center;
         h1 {
           font-size: 1em;
+          font-family: "Playfair Display", serif;
         }
       }
     }
@@ -845,6 +867,7 @@
       justify-content: flex-start;
       h1 {
         font-size: 1.2em;
+        font-family: "Playfair Display", serif;
       }
       @media screen and (max-width: 1224px) {
         width: 100%;
@@ -967,6 +990,7 @@
       width: 90vw;
     }
     h1 {
+      font-family: "Playfair Display", serif;
       @media screen and (max-width: 1224px) {
         font-size: 2em;
         width: 80vw;

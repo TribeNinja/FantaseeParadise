@@ -96,7 +96,7 @@ function Home() {
       <div className="MainContainer">
         <section className="section0">
           {/* Section 1 */}
-          <section className="section1">
+          <section className="section1" id="section1">
             <p data-aos="zoom-in">{T("See your Fantasees come to life")}</p>
           </section>
 
@@ -104,7 +104,7 @@ function Home() {
           <section className="section2" id="about">
             <div className="textContainer" data-aos="fade-up">
               <div className="title">
-                <h2>{T("About Us")}</h2>
+                <h1>{T("About Us")}</h1>
                 <div className="line"></div>
               </div>
               <p>

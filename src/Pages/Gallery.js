@@ -4,6 +4,7 @@ import sanityClient from "../Components/Client";
 import Footer from "../Components/Footer";
 import Store from "../store";
 import { observer } from "mobx-react-lite";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ShowMore = (props) => {
   return (
@@ -59,33 +60,36 @@ const Gallery = () => {
           <div className="topSection">
             <div className="textAndImageContainer">
               <div className="bannerText">
-                <h1 data-aos="zoom-in">Welcome</h1>
-                <h1 data-aos="zoom-in" data-aos-delay="50">
-                  To
+                <h1 data-aos="fade-right">Welcome</h1>
+                <h1 data-aos="fade-right" data-aos-delay="50">
+                  To The
                 </h1>
-                <h1 data-aos="zoom-in" data-aos-delay="100">
+                {/* <h1 data-aos="fade-right" data-aos-delay="100">
                   The
-                </h1>
+                </h1> */}
                 <h1
                   style={{
                     width: "100vw",
                   }}
-                  data-aos="zoom-in"
+                  data-aos="fade-right"
                   data-aos-delay="150"
                 >
                   Exotic
                 </h1>
-                <h1 data-aos="zoom-in" data-aos-delay="200">
+                <h1 data-aos="fade-right" data-aos-delay="200">
                   Gallery
                 </h1>
               </div>
               <div className="imageContainer">
-                <img
+                <LazyLoadImage
                   src={postData.bg[0].image.asset.url}
                   // src={postData.homegallery.image.asset.url}
                   alt="Banner"
-                  data-aos="fade-right"
-                  loading="lazy"
+                  data-aos="fade-left"
+                  placeholderSrc={
+                    process.env.PUBLIC_URL + "/GalleryHeadPH.webp"
+                  }
+                  // data-aos="fade-left"
                 />
               </div>
             </div>
