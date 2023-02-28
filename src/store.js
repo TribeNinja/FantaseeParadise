@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 import { createContext } from "react";
 
 class Store {
+  // lang = ""
   drawer = false;
   showProfile = null;
   showImage = null;
@@ -17,6 +18,10 @@ class Store {
     makeAutoObservable(this);
   }
 
+  // setLang = (value) => {
+  //   this.lang = value;
+  //   // window.location.reload();
+  // };
   setFalse = () => {
     this.drawer = false;
   };

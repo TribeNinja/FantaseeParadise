@@ -1,20 +1,11 @@
 import { observer } from "mobx-react-lite";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../Components/Footer";
 import "./Pages.scss";
-import { Translator, T } from "react-translator-component";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import sanityClient from "../Components/Client";
-
-function TranslatorApplication() {
-  return (
-    <Translator>
-      <Application />
-    </Translator>
-  );
-}
 
 const Application = () => {
   // Auto Handle Age
@@ -63,7 +54,6 @@ const Application = () => {
     navigate("/");
   };
 
-  const [data, setData] = useState();
   // useEffect(() => {
   //   sanityClient
   //     .fetch(`*[_type == "applications"]{imageApplication}`)
@@ -83,7 +73,7 @@ const Application = () => {
     <>
       <div className="FormContainer">
         <div className="FormTitle">
-          <h1>{T("Application Form")}</h1>
+          <h1>Application Form</h1>
         </div>
         <div className="formContents">
           <form ref={form} onSubmit={minDate > 17 ? sendEmail : notifyminors()}>
@@ -168,4 +158,4 @@ const Application = () => {
   );
 };
 
-export default observer(TranslatorApplication);
+export default observer(Application);

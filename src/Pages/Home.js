@@ -1,35 +1,16 @@
 import "./Pages.scss";
-import { Translator, T, Config } from "react-translator-component";
 import Footer from "../Components/Footer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Forms from "../Components/Forms";
 import { toast } from "react-toastify";
+import { observer } from "mobx-react-lite";
 import HomeSlide from "../Components/HomeSlide";
-Config.default = "en";
-
-Config.list = {
-  en: {
-    text: "English",
-    icon: "../flags/en.svg",
-    file: require("../locale/en"),
-  },
-  es: {
-    text: "Español",
-    icon: "../flags/es.svg",
-    file: require("../locale/es"),
-  },
-};
-
-function TranslatorApp() {
-  return (
-    <Translator>
-      <Home />
-    </Translator>
-  );
-}
+import { useTranslation } from "react-i18next";
+// import Store from "../store";
 
 function Home() {
   const mailnotify = () => toast("Email Copied to clipboard !");
+  const { t } = useTranslation();
 
   const [modelManage, setModelManage] = useState(false);
   useEffect(() => {
@@ -61,6 +42,7 @@ function Home() {
   useEffect(() => {
     window.localStorage.setItem("MY_APP_STATE", JSON.stringify(showPopUp));
   }, [showPopUp]);
+
   //
   return (
     <>
@@ -97,20 +79,18 @@ function Home() {
         <section className="section0">
           {/* Section 1 */}
           <section className="section1" id="section1">
-            <p data-aos="zoom-in">{T("See your Fantasees come to life")}</p>
+            <p data-aos="zoom-in">{t(`HomeTop.1`)}</p>
           </section>
 
           {/* Section 2 */}
           <section className="section2" id="about">
             <div className="textContainer" data-aos="fade-up">
               <div className="title">
-                <h1>{T("About Us")}</h1>
+                <h1>{t(`About Us.1`)}</h1>
                 <div className="line"></div>
               </div>
               <p>
-                {T(
-                  "Fantasee Paradise will help you live all your fantasies. We are here to deliver your wildest dreams and help you make money while you live your best life. We have a collection of the most exotic models with a very loyal fan base. We pride ourselves in empowering models across the world to achieve their dreams via our platform. Our mission is to help you grow, while bringing all your fantasies to life! Our Management team is rated one of the best in the industry and we are here to not only help you build your brand as a top model, but also build your business so you can grow and bring other fantasies to life. We have a great team of individuals to guide you through the challenges of opening a studio or being a top rated model. "
-                )}
+                {t(`About1.1`)}
                 <a
                   target="_top"
                   href="mailto:fantaseeparadise@gmail.com"
@@ -122,9 +102,7 @@ function Home() {
                 >
                   Contact us
                 </a>
-                {T(
-                  " so we can help turn your wildest fantasies into a reality!"
-                )}
+                {t(`About2.1`)}
               </p>
             </div>
             <video
@@ -148,21 +126,15 @@ function Home() {
         >
           <div className="section3Wrapper">
             <div className="writing" data-aos="fade-up">
-              <h1>{T("Complete Model Management")}</h1>
-              <p>
-                {T(
-                  "Are you a model who needs management? Whether you work remotely or would like to work at one of our studios, we provide a complete setup, photoshoots, education, and promotions. We manage OnlyFans, Webcams, Influencers, and Reality Stars."
-                )}
-              </p>
+              <h1>{t(`ModelMgmt.1`)}</h1>
+              <p>{t(`ModelDesc.1`)} </p>
               <p
                 className="section3Button"
                 onClick={() => {
                   setModelManage(!modelManage);
                 }}
               >
-                {modelManage
-                  ? T("Choose relevant form or click again.")
-                  : T("Join us to live your FantaSee life")}
+                {modelManage ? `${t(`ModelBtn1.1`)}` : `${t(`ModelBtn2.1`)}`}
               </p>
             </div>
           </div>
@@ -190,4 +162,4 @@ function Home() {
   );
 }
 
-export default TranslatorApp;
+export default observer(Home);

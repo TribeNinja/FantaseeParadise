@@ -60,7 +60,7 @@
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 5%;
   p {
     a {
@@ -72,8 +72,10 @@
     justify-content: space-between;
   }
   .language {
-    // background-color: #ffff00;
+    background-color: #ffff00;
     display: flex;
+    width: 10%;
+    height: 100%;
     padding-left: 2%;
     // justify-content: center;
     // width: 10vw;

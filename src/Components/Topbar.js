@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./components.scss";
-import { LanguageList, Config } from "react-translator-component";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+// import Store from "../store";
+import { observer } from "mobx-react-lite";
 
 const Topbar = () => {
-  const [lang, setLang] = useState(Config);
+  // const store = useContext(Store);
+  // const { lang, setLang } = store;
+
+  const { t, i18n } = useTranslation();
+
   const mailnotify = () => toast("Email Copied to clipboard !");
+  const handleClick = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <div className="topbarContainer">
       <p>
@@ -17,26 +27,15 @@ const Topbar = () => {
           }}
           href="mailto: fantaseeparadise@gmail.com"
         >
-          Contact
+          {t(`Contact.1`)}
         </a>
       </p>
       <div className="language">
-        <LanguageList Language={lang} />
-        <select value={lang} onChange={(e) => setLang(e.target.value)}>
-          {Object.keys(Config.list).map((key, index) => {
-            return (
-              <>
-                <option key={index} value={key}>
-                  <img src={`${Config.list[key].icon}`} alt="" />
-                  {Config.list[key].text}
-                </option>
-              </>
-            );
-          })}
-        </select>
+        <button onClick={() => handleClick("en")}>English</button>
+        <button onClick={() => handleClick("es")}>Spanish</button>
       </div>
     </div>
   );
 };
 
-export default Topbar;
+export default observer(Topbar);

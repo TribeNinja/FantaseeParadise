@@ -3,7 +3,9 @@ import { AiFillInstagram, AiFillMail } from "react-icons/ai";
 import logo from "../Assets/paradise_white.png";
 import { HashLink } from "react-router-hash-link";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+  const { t } = useTranslation();
   const mailnotify = () => toast("Email Copied to clipboard !");
   return (
     <div className="footerContainer">
@@ -34,7 +36,7 @@ const Footer = () => {
           </a>
           <div>
             <HashLink to="/#about" smooth style={{ textDecoration: "none" }}>
-              <h4>About us</h4>
+              <h4>{t(`About Us.1`)}</h4>
             </HashLink>
           </div>
         </div>
@@ -42,7 +44,7 @@ const Footer = () => {
 
       <div className="items">
         <div className="social">
-          <p>© All rights reserved Fantasee Paradise 2023</p>
+          <p>© {t(`copyright.1`)}</p>
         </div>
       </div>
     </div>

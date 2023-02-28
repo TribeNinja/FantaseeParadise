@@ -5,15 +5,17 @@ import Footer from "../Components/Footer";
 import Store from "../store";
 import { observer } from "mobx-react-lite";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useTranslation } from "react-i18next";
 
 const ShowMore = (props) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="showDesc">
         <h1>{props.name}</h1>
       </div>
       <div className="showMore">
-        <h1>Show More</h1>
+        <h1>{t(`ShowMore.1`)}</h1>
       </div>
     </>
   );
@@ -34,12 +36,12 @@ const Gallery = () => {
     setShowLink,
     setRefreshArray,
   } = store;
+  const { t } = useTranslation();
 
   const [showMore, setShowMore] = useState(null);
 
   // Sanity Connection
   const [postData, setPostData] = useState(null);
-  const [galleryBg, setGalleryBg] = useState(null);
 
   useEffect(() => {
     sanityClient
@@ -60,13 +62,11 @@ const Gallery = () => {
           <div className="topSection">
             <div className="textAndImageContainer">
               <div className="bannerText">
-                <h1 data-aos="fade-right">Welcome</h1>
+                <h1 data-aos="fade-right">{t(`welcome.1`)}</h1>
                 <h1 data-aos="fade-right" data-aos-delay="50">
-                  To The
+                  {t(`to the.1`)}
                 </h1>
-                {/* <h1 data-aos="fade-right" data-aos-delay="100">
-                  The
-                </h1> */}
+
                 <h1
                   style={{
                     width: "100vw",
@@ -74,10 +74,10 @@ const Gallery = () => {
                   data-aos="fade-right"
                   data-aos-delay="150"
                 >
-                  Exotic
+                  {t(`exotic.1`)}
                 </h1>
                 <h1 data-aos="fade-right" data-aos-delay="200">
-                  Gallery
+                  {t(`Gallery.1`)}
                 </h1>
               </div>
               <div className="imageContainer">
@@ -96,8 +96,7 @@ const Gallery = () => {
             <div className="heroText">
               <p>
                 <span data-aos="zoom-in" data-aos-delay="250">
-                  Get ready to be swept off your feet and transported to a world
-                  of exotic pleasure – meet our models today!
+                  {t(`galleryDesc.1`)}
                 </span>
               </p>
             </div>
