@@ -70,6 +70,7 @@
   }
   @media screen and (max-width: 900px) {
     justify-content: space-between;
+    z-index: 0;
   }
   .language {
     display: flex;
@@ -79,6 +80,7 @@
     width: 12%;
     height: 100%;
     z-index: 502;
+
     button {
       display: flex;
       align-items: center;
